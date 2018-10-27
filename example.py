@@ -28,6 +28,8 @@ dag={1:(2,3,4,5,6),
      10:()}
 
 def compcost(job, agent):
+    if(job==0):
+        return 0
     if(job==1):
         if(agent=='a'):
             return 14
