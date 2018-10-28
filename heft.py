@@ -23,7 +23,6 @@ class Task:
         self.rankd = None
         self.comp_cost = []
         self.avg_comp_cost = None
-        self.avg_comm_cost = None
         self.successors = []
         self.predecessors = []
 
@@ -138,9 +137,10 @@ if __name__ == "__main__":
     # priority_list = sorted(tasks, key=lambda x: x.rankd)
 
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
-    for task in priority_list:
+    for task in tasks:
         logging.info(task)
     logging.info('-'*20)
+    logging.info('task scheduling order: %s', [t.id for t in priority_list])
 
     tasks[0].ast = 0
     tasks[0].aft = 0
