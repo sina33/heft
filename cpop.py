@@ -3,7 +3,7 @@ import statistics as stats
 from queue import PriorityQueue
 import logging
 logging.getLogger(__name__).addHandler(logging.NullHandler())
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 
 # Set the computation costs of tasks and communication costs of edges with mean values.
@@ -166,7 +166,7 @@ if __name__ == "__main__":
         i = pr.index(max(pr))
         CP.add(tasks[selected.successors[i]])
         selected = tasks[selected.successors[i]]
-        logging.debug('CP: %s', [t.id for t in CP])
+        logging.info('CP: %s', [t.id for t in CP])
     
     # Select the CP-Processor
     pcp = [0] * P
@@ -174,7 +174,8 @@ if __name__ == "__main__":
         for p in range(P):
             pcp[p] += compcost(t.id, chr(97+p))
     cp_processor = pcp.index(min(pcp))
-    
+    logging.info('CP-Processor is %s', cp_processor)
+
     # Initialize Priority Queue
     tasks[0].ast = 0
     tasks[0].aft = 0
