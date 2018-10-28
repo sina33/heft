@@ -62,17 +62,26 @@ def est(i, p, tasks, processors):
         i {int} -- task id
         p {int} -- processor id
         tasks {list} -- list of Tasks
-"""
+        processors {list} -- list of Processors
+    """
     if i==0:        # entry task
         return 0
-    seq = [tasks[m].aft + commcost(m, i, 'a', 'b') for m in tasks[i].predecessors]
+    seq = [tasks[m].aft + commcost(m, i, tasks[m].processor, p) for m in tasks[i].predecessors]
+    logging.debug('est ready_times for task %s on different cores: %s', i, seq)
     ready_time = max(seq)
-    next((x for x in processors if x.id == p), None)
-    logging.debug('est: %s', max([ready_time, processors[p].avail]))
+    logging.debug('est(%s, %s): %s', i, p, max([ready_time, processors[p].avail]))
     return max([ready_time, processors[p].avail])
 
 
 def eft(i, p, tasks, processors):
+    """Calculate Earliest execution Finish Time for task i on processor p
+    
+    Arguments:
+        i {int} -- task id
+        p {int} -- processor id
+        tasks {list} -- list of Tasks
+        processors {list} -- list of Processors
+    """
     logging.debug('eft: %s, %s = %s', i, p, compcost(i, chr(97+p)))
     return compcost(i, chr(97+p)) + est(i, p, tasks, processors)
 
@@ -107,8 +116,10 @@ if __name__ == "__main__":
     # return a new sorted list, use the sorted() built-in function
     priority_list = sorted(tasks, key=lambda x: x.rank, reverse=True)
 
+    logging.info('-'*7 + ' Tasks ' + '-'*7 )
     for task in priority_list:
         logging.info(task)
+    logging.info('-'*20)
 
     tasks[0].ast = 0
     tasks[0].aft = 0
@@ -116,10 +127,12 @@ if __name__ == "__main__":
         seq = [eft(task.id, p.id, tasks, processors) for p in processors]
         p = seq.index(min(seq))
         processors[p].tasks.append(task)
+        task.processor = p
         task.ast = est(task.id, p, tasks, processors)
         task.aft = eft(task.id, p, tasks, processors)
+        processors[p].avail = task.aft
 
     for p in processors:
-        logging.info('task on processor %s: %s', p.id, [t.id for t in p.tasks])
+        logging.info('tasks on processor %s: %s', p.id, [{t.id: (t.ast, t.aft)} for t in p.tasks])
 
     logging.info('makespan: %s', makespan(tasks))
