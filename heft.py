@@ -18,15 +18,17 @@ class Task:
         self.aft = None     # Actual Finish Time
         self.est = []       # Earliest execution Start Time
         self.eft = []       # Earliest execution Finish Time
-        self.rank = None
+        self.ranku = None
+        self.rankd = None
         self.comp_cost = []
-        self.avg_comp = None
+        self.avg_comp_cost = None
+        self.avg_comm_cost = None
         self.successors = []
         self.predecessors = []
 
     def __str__(self):
-        return str(" TASK id: {}, succ: {}, pred: {}, avg_comp: {}, rank: {}".format(
-            self.id, self.successors, self.predecessors, self.avg_comp, self.rank
+        return str(" TASK id: {}, succ: {}, pred: {}, avg_comp_cost: {}, ranku: {}, rankd: {}".format(
+            self.id, self.successors, self.predecessors, self.avg_comp_cost, self.ranku, self.rankd
         ))
 
 
@@ -35,24 +37,37 @@ class Processor:
         self.id = num
         self.tasks = []
         self.avail = 0      # processor ready time in a non-insertion based scheduling policy
+    
 
 
 
 def ranku(i, tasks):
-    """Calculate Upward Rank of a node
+    """Calculate Upward Rank of a task
+    
+    Arguments:
+        i {int} -- task id
+        tasks {list} -- list of Tasks
+    """ 
+    seq = [commcost(i, j,'a', 'b') / 2 + ranku(j, tasks) for j in tasks[i].successors]
+    logging.debug('%s - seq: %s', i, seq)
+    if i==0:
+        return 9999
+    if seq == []:
+        return tasks[i].avg_comp_cost
+    return tasks[i].avg_comp_cost + max(seq)
+
+
+def rankd(i, tasks):
+    """Calculate Downward Rank of a task
     
     Arguments:
         i {int} -- task id
         tasks {list} -- list of Tasks
     """
-    
-    seq = [commcost(i, j,'a', 'b') + ranku(j, tasks) for j in tasks[i].successors]
-    logging.debug('%s - seq: %s', i, seq)
-    if i==0:
-        return 9999
-    if seq == []:
-        return tasks[i].avg_comp
-    return tasks[i].avg_comp + max(seq)
+    if i==0:        # entry task
+        return 0
+    seq = [(rankd(j, tasks) + tasks[j].avg_comp_cost + commcost(i, j, 'a', 'b')/2) for j in tasks[i].predecessors]
+    return max(seq)
 
 
 def est(i, p, tasks, processors):
@@ -101,20 +116,25 @@ if __name__ == "__main__":
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
         tasks[t].comp_cost = [compcost(t, p) for p in 'ab']
-        tasks[t].avg_comp = stats.mean(tasks[t].comp_cost)        
+        tasks[t].avg_comp_cost = stats.mean(tasks[t].comp_cost)        
         for x in succ:
             tasks[x].predecessors.append(t)
         # setup entry task (id=0)
-        tasks[0].avg_comp = 0
+        tasks[0].avg_comp_cost = 0
         tasks[0].successors = [1]
         tasks[1].predecessors = [0]
 
-    # Calculate Ranks by traversing task graph upward
+    # Calculate ranku by traversing task graph upward
     for task in reversed(tasks):
-        task.rank = ranku(task.id, tasks)
-            
+        task.ranku = ranku(task.id, tasks)
+    
+    # Calculate Rankd by traversing task graph upward
+    for task in tasks:
+        task.rankd = rankd(task.id, tasks)
+    
     # return a new sorted list, use the sorted() built-in function
-    priority_list = sorted(tasks, key=lambda x: x.rank, reverse=True)
+    # priority_list = sorted(tasks, key=lambda x: x.ranku, reverse=True)
+    priority_list = sorted(tasks, key=lambda x: x.rankd)
 
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
     for task in priority_list:
