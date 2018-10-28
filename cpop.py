@@ -1,9 +1,9 @@
 from example import dag, commcost, compcost
 import statistics as stats
-from decimal import Decimal, ROUND_DOWN
+from queue import PriorityQueue
 import logging
 logging.getLogger(__name__).addHandler(logging.NullHandler())
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 
 # Set the computation costs of tasks and communication costs of edges with mean values.
@@ -21,15 +21,15 @@ class Task:
         self.eft = []       # Earliest execution Finish Time
         self.ranku = None
         self.rankd = None
+        self.priority = None
         self.comp_cost = []
         self.avg_comp_cost = None
-        self.avg_comm_cost = None
         self.successors = []
         self.predecessors = []
 
     def __str__(self):
-        return str(" TASK id: {}, succ: {}, pred: {}, avg_comp_cost: {}, ranku: {}, rankd: {}".format(
-            self.id, self.successors, self.predecessors, self.avg_comp_cost, self.ranku, self.rankd
+        return str(" TASK id: {}, succ: {}, pred: {}, ranku: {}, rankd: {}, processor: {}".format(
+            self.id, self.successors, self.predecessors, self.ranku, self.rankd, self.processor
         ))
 
 
@@ -82,12 +82,12 @@ def est(i, p, tasks, processors):
     """
     if i==0:        # entry task
         return 0
-    seq = [tasks[m].aft + commcost(m, i, tasks[m].processor, p) for m in tasks[i].predecessors]
-    logging.debug('est ready_times for task %s on different cores: %s', i, seq)
+    seq = [tasks[m].aft + commcost(m, i, tasks[m].processor, p) + commcost(i, m, tasks[m].processor, p) for m in tasks[i].predecessors]
+    logging.debug('est() ready_times for task %s on processor %s : %s', i, p, seq)
     ready_time = max(seq)
-    logging.debug('est(%s, %s): %s', i, p, max([ready_time, processors[p].avail]))
-    return max([ready_time, processors[p].avail])
-
+    res = max([ready_time, processors[p].avail])
+    logging.debug('est(%s, %s): %s', i, p, res)
+    return res
 
 def eft(i, p, tasks, processors):
     """Calculate Earliest execution Finish Time for task i on processor p
@@ -98,13 +98,32 @@ def eft(i, p, tasks, processors):
         tasks {list} -- list of Tasks
         processors {list} -- list of Processors
     """
-    logging.debug('eft: %s, %s = %s', i, p, compcost(i, chr(97+p)))
-    return compcost(i, chr(97+p)) + est(i, p, tasks, processors)
+    res = compcost(i, chr(97+p)) + est(i, p, tasks, processors)
+    logging.debug('eft(%s, %s) = %s', i, p, res)
+    return res
 
 
 def makespan(tasks):
     seq = [t.aft for t in tasks]
     return max(seq)
+
+
+def assign(i, p, tasks, processors):
+    """Assign task to processor
+    
+    Arguments:
+        i {int} -- task id
+        p {int} -- processor id
+        tasks {list} -- list of tasks
+        processors {list} -- list of processors
+    """
+    processors[p].tasks.append(tasks[i])
+    tasks[i].processor = p
+    tasks[i].ast = est(tasks[i].id, p, tasks, processors)
+    tasks[i].aft = eft(tasks[i].id, p, tasks, processors)
+    processors[p].avail = tasks[i].aft
+
+
 
 
 if __name__ == "__main__":
@@ -132,26 +151,58 @@ if __name__ == "__main__":
     # Calculate Rankd by traversing task graph upward
     for task in tasks:
         task.rankd = round(rankd(task.id, tasks), 3)
+        
     
-    # return a new sorted list, use the sorted() built-in function
-    priority_list = sorted(tasks, key=lambda x: x.ranku, reverse=True)
-    # priority_list = sorted(tasks, key=lambda x: x.rankd)
+    # Calculate Priority
+    for task in tasks:
+        task.priority = task.rankd + task.ranku
 
+    _cp_ = tasks[1].priority
+    CP = {tasks[1],}
+    # Construct Critical-Path (CP)
+    selected = tasks[1]
+    while selected.id is not N:
+        pr = [tasks[t].priority for t in selected.successors]
+        i = pr.index(max(pr))
+        CP.add(tasks[selected.successors[i]])
+        selected = tasks[selected.successors[i]]
+        logging.debug('CP: %s', [t.id for t in CP])
+    
+    # Select the CP-Processor
+    pcp = [0] * P
+    for t in CP:
+        for p in range(P):
+            pcp[p] += compcost(t.id, chr(97+p))
+    cp_processor = pcp.index(min(pcp))
+    
+    # Initialize Priority Queue
+    tasks[0].ast = 0
+    tasks[0].aft = 0
+    q = PriorityQueue()
+    q.put((-tasks[1].priority, tasks[1]))
+    order = []
+    while not q.empty():
+        task = q.get()[1]
+        order.append(task.id)
+        logging.debug('task from q: %s', task)
+        if task in CP:
+            # Assign the task to the CP-Processor
+            assign(task.id, cp_processor, tasks, processors)
+        else:
+            seq = [eft(task.id, p, tasks, processors) for p in range(P)]
+            p = seq.index(min(seq))
+            assign(task.id, p, tasks, processors)
+        # Update the Priority Queue with successors of task if they become ready tasks
+        for s in task.successors:
+            if None not in [(tasks[p].processor) for p in tasks[s].predecessors]:
+                q.put((-tasks[s].priority, tasks[s]))
+
+    logging.info('task scheduling order: %s', order)
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
-    for task in priority_list:
+    for task in tasks:
         logging.info(task)
     logging.info('-'*20)
 
-    tasks[0].ast = 0
-    tasks[0].aft = 0
-    for task in priority_list:
-        seq = [eft(task.id, p.id, tasks, processors) for p in processors]
-        p = seq.index(min(seq))
-        processors[p].tasks.append(task)
-        task.processor = p
-        task.ast = est(task.id, p, tasks, processors)
-        task.aft = eft(task.id, p, tasks, processors)
-        processors[p].avail = task.aft
 
     for p in processors:
         logging.info('tasks on processor %s: %s', p.id, [{t.id: (t.ast, t.aft)} for t in p.tasks])
