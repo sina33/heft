@@ -1,4 +1,4 @@
-from example import dag, commcost, compcost
+from stg.laplace import dag, commcost, compcost
 import statistics as stats
 from decimal import Decimal, ROUND_DOWN
 import logging
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     P = 3
     processors = [Processor(i) for i in range(P)]
     # Create Tasks
-    N = 10
+    N = len(dag)
     tasks = [Task(i) for i in range(N+1)]
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
