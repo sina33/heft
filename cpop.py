@@ -32,6 +32,16 @@ class Task:
             self.id, self.successors, self.predecessors, self.ranku, self.rankd, self.processor
         ))
 
+    # def __eq__(self, other):
+    #     if other.priority == self.priority:
+    #         return True
+    #     else:
+    #         return False
+
+    def __lt__(self, other):
+        return self.priority < other.priority
+
+
 
 class Processor:
     def __init__(self, num):
