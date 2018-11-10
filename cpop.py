@@ -32,6 +32,7 @@ class Task:
             self.id, self.successors, self.predecessors, self.ranku, self.rankd, self.processor
         ))
 
+    ### turns Task to unhashable type
     # def __eq__(self, other):
     #     if other.priority == self.priority:
     #         return True
