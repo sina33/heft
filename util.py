@@ -1,5 +1,5 @@
+import itertools
 
-import itertools as it
 
 def reverse_dict(d):
     """ Reverses direction of dependence dict
@@ -10,12 +10,13 @@ def reverse_dict(d):
     """
     result = {}
     for key in d:
+        result[key] = result.get(key, tuple())
         for val in d[key]:
             result[val] = result.get(val, tuple()) + (key, )
     return result
 
 def find_job_event(job_name, orders_dict):
-    for event in it.chain.from_iterable(orders_dict.values()):
+    for event in itertools.chain.from_iterable(orders_dict.values()):
         if event.job == job_name:
             return event
 
@@ -52,14 +53,19 @@ def stg_to_dag(filename = 'sparse'):
 def dag_to_stg(dag, compcost, filename='tmp.stg'):
     N = len(dag)
     rdag = reverse_dict(dag)
+    print('reversed dag : %s' % rdag)
+    print('reversed dag sorted: %s' % sorted(rdag.items(), key=lambda x: x[0]))
+    # print()
     with open(filename, 'w+') as f:
         f.write("%d \n" % N)
         f.write("0 0 0 \n")
-        for k, v in rdag.items():
+        for k, v in sorted(rdag.items(), key=lambda x: x[0]):
             f.write("%d %d " % (k, compcost(k, 'a')))
             if v:
                 f.write("%d " % len(v))
                 for d in v:
                     f.write("%d " % d)
+            else:
+                f.write('0 ')
             f.write("\n")
         
