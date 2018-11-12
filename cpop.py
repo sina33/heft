@@ -1,4 +1,4 @@
-from stg.gaussian_elimination import dag, commcost, compcost
+from example import dag, commcost, compcost
 import statistics as stats
 from queue import PriorityQueue
 import logging
@@ -146,7 +146,8 @@ if __name__ == "__main__":
     tasks = [Task(i) for i in range(N+1)]
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
-        tasks[t].comp_cost = [compcost(t, p) for p in 'abc']
+        agents = ''.join([chr(97+i) for i in range(P)]) # e.g., 'abc'
+        tasks[t].comp_cost = [compcost(t, p) for p in agents]
         tasks[t].avg_comp_cost = stats.mean(tasks[t].comp_cost)   
         for x in succ:
             tasks[x].predecessors.append(t)

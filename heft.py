@@ -1,4 +1,4 @@
-from stg.laplace import dag, commcost, compcost
+from example import dag, commcost, compcost
 import statistics as stats
 from decimal import Decimal, ROUND_DOWN
 import logging
@@ -81,6 +81,10 @@ def est(i, p, tasks, processors):
     """
     if i==0:        # entry task
         return 0
+    for m in tasks[i].predecessors:
+        if tasks[m].aft is None:
+            schedule(tasks[m], tasks, processors)
+            # print('tasks[%s].aft: %s' % (m, tasks[m].aft))
     seq = [tasks[m].aft + commcost(m, i, tasks[m].processor, p) for m in tasks[i].predecessors]
     logging.debug('est ready_times for task %s on different cores: %s', i, seq)
     ready_time = max(seq)
@@ -106,6 +110,29 @@ def makespan(tasks):
     return max(seq)
 
 
+def assign(i, p, tasks, processors):
+    """Assign task to processor
+    
+    Arguments:
+        i {int} -- task id
+        p {int} -- processor id
+        tasks {list} -- list of tasks
+        processors {list} -- list of processors
+    """
+    processors[p].tasks.append(tasks[i])
+    tasks[i].processor = p
+    tasks[i].ast = est(tasks[i].id, p, tasks, processors)
+    tasks[i].aft = eft(tasks[i].id, p, tasks, processors)
+    processors[p].avail = tasks[i].aft
+
+
+def schedule(task, tasks, processors):
+    seq = [eft(task.id, p.id, tasks, processors) for p in processors]
+    p = seq.index(min(seq))
+    assign(task.id, p, tasks, processors)
+
+
+
 if __name__ == "__main__":
     # Create Processors
     P = 3
@@ -115,7 +142,8 @@ if __name__ == "__main__":
     tasks = [Task(i) for i in range(N+1)]
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
-        tasks[t].comp_cost = [compcost(t, p) for p in 'abc']
+        agents = ''.join([chr(97+i) for i in range(P)]) # e.g., 'abc'
+        tasks[t].comp_cost = [compcost(t, p) for p in agents]
         tasks[t].avg_comp_cost = stats.mean(tasks[t].comp_cost)   
         for x in succ:
             tasks[x].predecessors.append(t)
@@ -145,13 +173,9 @@ if __name__ == "__main__":
     tasks[0].ast = 0
     tasks[0].aft = 0
     for task in priority_list:
-        seq = [eft(task.id, p.id, tasks, processors) for p in processors]
-        p = seq.index(min(seq))
-        processors[p].tasks.append(task)
-        task.processor = p
-        task.ast = est(task.id, p, tasks, processors)
-        task.aft = eft(task.id, p, tasks, processors)
-        processors[p].avail = task.aft
+        schedule(task, tasks, processors)
+        
+
 
     for p in processors:
         logging.info('tasks on processor %s: %s', p.id, [{t.id: (t.ast, t.aft)} for t in p.tasks])
