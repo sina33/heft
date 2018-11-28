@@ -1,29 +1,58 @@
-# from stg.laplace import dag, commcost, compcost
+# from stg.fft import dag, commcost, compcost
 from util import stg_to_dag
 import statistics as stats
 from decimal import Decimal, ROUND_DOWN
 import logging
 logging.getLogger(__name__).addHandler(logging.NullHandler())
-logging.basicConfig(level=logging.INFO)
 
+
+### Configs
+alg = 'heft-t' # 'heft-t' (ranku) or 'heft-b' (rankd)
+task_graph = 'gaussian' # 'sparse' or 'fpppp' or 'robot' or uncomment a line from below
+# from stg.fft import dag, commcost, compcost
+# from stg.laplace import dag, commcost, compcost
+from stg.gaussian_elimination import dag, commcost, compcost
+log_to_file = True
+log_level = logging.INFO
+###
+
+
+if log_to_file:
+    log_filename = 'logs/' + alg + '/' + task_graph + '.log'
+    logging.basicConfig(level=log_level, filename=log_filename) # filename='sparse.log'
+else:
+    logging.basicConfig(level=log_level)
 
 # Set the computation costs of tasks and communication costs of edges with mean values.
 # Compute rank_u for all tasks by traversing graph upward, starting from the exit task.
 # Sort the tasks in a scheduling list by nonincreasing order of rank_u values.
 
+global compcost
+global commcost
+global dag
+stgs = ['sparse', 'robot', 'fpppp']
+
 ### for running stg task graphs
-total_cores = 4
-low_perf_multiplier = 2
-dag, _compcost = stg_to_dag('stg/fpppp')
+if task_graph in stgs:
+    low_perf_multiplier = 2
+    dag, _compcost = stg_to_dag('stg/' + task_graph)
 
-def commcost(a, b, A, B):
-    return 0
+    def comm(a, b, A, B):
+        return 0
 
-def compcost(job, agent):
-    if agent == 'a' or agent == 'b':
-        return _compcost[job] * low_perf_multiplier
-    else: 
-        return _compcost[job]
+    def comp(job, agent):
+        if agent == 'a' or agent == 'b':
+            return _compcost[job] * low_perf_multiplier
+        else: 
+            return _compcost[job]
+
+    compcost = comp
+    commcost = comm
+
+else:
+    pass
+
+
 
 class Task:
     def __init__(self, num):
@@ -80,6 +109,7 @@ def rankd(i, tasks):
     """
     if i==0:        # entry task
         return 0
+    logging.debug('rankd(%s)', i)
     seq = [(rankd(j, tasks) + tasks[j].avg_comp_cost + commcost(j, i, 'a', 'b')) for j in tasks[i].predecessors]
     return max(seq)
 
@@ -153,7 +183,7 @@ if __name__ == "__main__":
     P = 4
     processors = [Processor(i) for i in range(P)]
     # Create Tasks
-    N = len(dag) - 1
+    N = len(dag) - 1 if task_graph in stgs else len(dag)
     tasks = [Task(i) for i in range(N+1)] # N+1 for non-stg
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
@@ -164,8 +194,9 @@ if __name__ == "__main__":
             tasks[x].predecessors.append(t)
         # setup entry task (id=0)
         tasks[0].avg_comp_cost = 0
-        # tasks[0].successors = [1]
-        # tasks[1].predecessors = [0]
+        if task_graph not in stgs:
+            tasks[0].successors = [1]
+            tasks[1].predecessors = [0]
         
 
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
@@ -182,8 +213,12 @@ if __name__ == "__main__":
         task.rankd = round(rankd(task.id, tasks), 3)
     
     # return a new sorted list, use the sorted() built-in function
-    priority_list = sorted(tasks, key=lambda x: x.rankd, reverse=True)
-    # priority_list = sorted(tasks, key=lambda x: x.rankd)
+    priority_list = list()
+    if alg == 'heft-t':
+        priority_list = sorted(tasks, key=lambda x: x.ranku, reverse=True)
+    elif alg == 'heft-b':
+        priority_list = sorted(tasks, key=lambda x: x.rankd, reverse=True)
+
 
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
     for task in tasks:
