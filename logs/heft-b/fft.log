@@ -1,0 +1,40 @@
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1], pred: [], avg_comp_cost: 0, ranku: None, rankd: None
+INFO:root: TASK id: 1, succ: [2, 3, 4, 5], pred: [0], avg_comp_cost: 1.5, ranku: None, rankd: None
+INFO:root: TASK id: 2, succ: [6, 9], pred: [1], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 3, succ: [6, 7], pred: [1], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 4, succ: [7, 8], pred: [1], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 5, succ: [8, 9], pred: [1], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 6, succ: [10], pred: [2, 3], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 7, succ: [11], pred: [3, 4], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 8, succ: [12], pred: [4, 5], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 9, succ: [13], pred: [2, 5], avg_comp_cost: 7.5, ranku: None, rankd: None
+INFO:root: TASK id: 10, succ: [14], pred: [6], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 11, succ: [14], pred: [7], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 12, succ: [14], pred: [8], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 13, succ: [14], pred: [9], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 14, succ: [], pred: [10, 11, 12, 13], avg_comp_cost: 1.5, ranku: None, rankd: None
+INFO:root:--------------------
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1], pred: [], avg_comp_cost: 0, ranku: 9999, rankd: 0
+INFO:root: TASK id: 1, succ: [2, 3, 4, 5], pred: [0], avg_comp_cost: 1.5, ranku: 39.0, rankd: 0
+INFO:root: TASK id: 2, succ: [6, 9], pred: [1], avg_comp_cost: 7.5, ranku: 37.5, rankd: 1.5
+INFO:root: TASK id: 3, succ: [6, 7], pred: [1], avg_comp_cost: 7.5, ranku: 37.5, rankd: 1.5
+INFO:root: TASK id: 4, succ: [7, 8], pred: [1], avg_comp_cost: 7.5, ranku: 37.5, rankd: 1.5
+INFO:root: TASK id: 5, succ: [8, 9], pred: [1], avg_comp_cost: 7.5, ranku: 37.5, rankd: 1.5
+INFO:root: TASK id: 6, succ: [10], pred: [2, 3], avg_comp_cost: 7.5, ranku: 30.0, rankd: 9.0
+INFO:root: TASK id: 7, succ: [11], pred: [3, 4], avg_comp_cost: 7.5, ranku: 30.0, rankd: 9.0
+INFO:root: TASK id: 8, succ: [12], pred: [4, 5], avg_comp_cost: 7.5, ranku: 30.0, rankd: 9.0
+INFO:root: TASK id: 9, succ: [13], pred: [2, 5], avg_comp_cost: 7.5, ranku: 30.0, rankd: 9.0
+INFO:root: TASK id: 10, succ: [14], pred: [6], avg_comp_cost: 21, ranku: 22.5, rankd: 16.5
+INFO:root: TASK id: 11, succ: [14], pred: [7], avg_comp_cost: 21, ranku: 22.5, rankd: 16.5
+INFO:root: TASK id: 12, succ: [14], pred: [8], avg_comp_cost: 21, ranku: 22.5, rankd: 16.5
+INFO:root: TASK id: 13, succ: [14], pred: [9], avg_comp_cost: 21, ranku: 22.5, rankd: 16.5
+INFO:root: TASK id: 14, succ: [], pred: [10, 11, 12, 13], avg_comp_cost: 1.5, ranku: 1.5, rankd: 37.5
+INFO:root:--------------------
+INFO:root:task scheduling order: [14, 10, 11, 12, 13, 6, 7, 8, 9, 2, 3, 4, 5, 0, 1]
+INFO:root:tasks on processor 0: {4: (1, 11), 8: (11, 21), 0: (0, 0)}
+INFO:root:tasks on processor 1: {5: (1, 11), 9: (11, 21)}
+INFO:root:tasks on processor 2: {1: (0, 1), 2: (1, 6), 6: (6, 11), 10: (11, 25), 12: (25, 39), 14: (44, 45)}
+INFO:root:tasks on processor 3: {3: (1, 6), 7: (11, 16), 11: (16, 30), 13: (30, 44)}
+INFO:root:makespan: 45

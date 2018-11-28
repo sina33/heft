@@ -1,0 +1,50 @@
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1], pred: [], avg_comp_cost: 0, ranku: None, rankd: None
+INFO:root: TASK id: 1, succ: [2, 3, 4, 5, 6, 7], pred: [0], avg_comp_cost: 120, ranku: None, rankd: None
+INFO:root: TASK id: 2, succ: [19], pred: [1], avg_comp_cost: 60, ranku: None, rankd: None
+INFO:root: TASK id: 3, succ: [7, 8], pred: [1], avg_comp_cost: 60, ranku: None, rankd: None
+INFO:root: TASK id: 4, succ: [9], pred: [1], avg_comp_cost: 60, ranku: None, rankd: None
+INFO:root: TASK id: 5, succ: [10], pred: [1], avg_comp_cost: 60, ranku: None, rankd: None
+INFO:root: TASK id: 6, succ: [11], pred: [1], avg_comp_cost: 60, ranku: None, rankd: None
+INFO:root: TASK id: 7, succ: [8, 9, 10, 11, 12], pred: [1, 3], avg_comp_cost: 90, ranku: None, rankd: None
+INFO:root: TASK id: 8, succ: [19], pred: [3, 7], avg_comp_cost: 45, ranku: None, rankd: None
+INFO:root: TASK id: 9, succ: [12, 13], pred: [4, 7], avg_comp_cost: 45, ranku: None, rankd: None
+INFO:root: TASK id: 10, succ: [14], pred: [5, 7], avg_comp_cost: 45, ranku: None, rankd: None
+INFO:root: TASK id: 11, succ: [15], pred: [6, 7], avg_comp_cost: 45, ranku: None, rankd: None
+INFO:root: TASK id: 12, succ: [13, 14, 15, 16], pred: [7, 9], avg_comp_cost: 60, ranku: None, rankd: None
+INFO:root: TASK id: 13, succ: [19], pred: [9, 12], avg_comp_cost: 30, ranku: None, rankd: None
+INFO:root: TASK id: 14, succ: [16, 17], pred: [10, 12], avg_comp_cost: 30, ranku: None, rankd: None
+INFO:root: TASK id: 15, succ: [18], pred: [11, 12], avg_comp_cost: 30, ranku: None, rankd: None
+INFO:root: TASK id: 16, succ: [17, 18], pred: [12, 14], avg_comp_cost: 30, ranku: None, rankd: None
+INFO:root: TASK id: 17, succ: [19], pred: [14, 16], avg_comp_cost: 15, ranku: None, rankd: None
+INFO:root: TASK id: 18, succ: [19], pred: [15, 16], avg_comp_cost: 15, ranku: None, rankd: None
+INFO:root: TASK id: 19, succ: [], pred: [2, 8, 13, 17, 18], avg_comp_cost: 0, ranku: None, rankd: None
+INFO:root:--------------------
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1], pred: [], avg_comp_cost: 0, ranku: 9999, rankd: 0
+INFO:root: TASK id: 1, succ: [2, 3, 4, 5, 6, 7], pred: [0], avg_comp_cost: 120, ranku: 450, rankd: 0
+INFO:root: TASK id: 2, succ: [19], pred: [1], avg_comp_cost: 60, ranku: 60, rankd: 120
+INFO:root: TASK id: 3, succ: [7, 8], pred: [1], avg_comp_cost: 60, ranku: 330, rankd: 120
+INFO:root: TASK id: 4, succ: [9], pred: [1], avg_comp_cost: 60, ranku: 240, rankd: 120
+INFO:root: TASK id: 5, succ: [10], pred: [1], avg_comp_cost: 60, ranku: 180, rankd: 120
+INFO:root: TASK id: 6, succ: [11], pred: [1], avg_comp_cost: 60, ranku: 150, rankd: 120
+INFO:root: TASK id: 7, succ: [8, 9, 10, 11, 12], pred: [1, 3], avg_comp_cost: 90, ranku: 270, rankd: 180
+INFO:root: TASK id: 8, succ: [19], pred: [3, 7], avg_comp_cost: 45, ranku: 45, rankd: 270
+INFO:root: TASK id: 9, succ: [12, 13], pred: [4, 7], avg_comp_cost: 45, ranku: 180, rankd: 270
+INFO:root: TASK id: 10, succ: [14], pred: [5, 7], avg_comp_cost: 45, ranku: 120, rankd: 270
+INFO:root: TASK id: 11, succ: [15], pred: [6, 7], avg_comp_cost: 45, ranku: 90, rankd: 270
+INFO:root: TASK id: 12, succ: [13, 14, 15, 16], pred: [7, 9], avg_comp_cost: 60, ranku: 135, rankd: 315
+INFO:root: TASK id: 13, succ: [19], pred: [9, 12], avg_comp_cost: 30, ranku: 30, rankd: 375
+INFO:root: TASK id: 14, succ: [16, 17], pred: [10, 12], avg_comp_cost: 30, ranku: 75, rankd: 375
+INFO:root: TASK id: 15, succ: [18], pred: [11, 12], avg_comp_cost: 30, ranku: 45, rankd: 375
+INFO:root: TASK id: 16, succ: [17, 18], pred: [12, 14], avg_comp_cost: 30, ranku: 45, rankd: 405
+INFO:root: TASK id: 17, succ: [19], pred: [14, 16], avg_comp_cost: 15, ranku: 15, rankd: 435
+INFO:root: TASK id: 18, succ: [19], pred: [15, 16], avg_comp_cost: 15, ranku: 15, rankd: 435
+INFO:root: TASK id: 19, succ: [], pred: [2, 8, 13, 17, 18], avg_comp_cost: 0, ranku: 0, rankd: 450
+INFO:root:--------------------
+INFO:root:task scheduling order: [0, 1, 3, 7, 4, 5, 9, 6, 12, 10, 11, 14, 2, 8, 15, 16, 13, 17, 18, 19]
+INFO:root:tasks on processor 0: {0: (0, 0), 5: (80, 160), 11: (180, 240), 13: (250, 290), 19: (300, 300)}
+INFO:root:tasks on processor 1: {6: (80, 160), 2: (160, 240)}
+INFO:root:tasks on processor 2: {1: (0, 80), 3: (80, 120), 7: (120, 180), 9: (180, 210), 12: (210, 250), 14: (250, 270), 16: (270, 290), 17: (290, 300)}
+INFO:root:tasks on processor 3: {4: (80, 120), 10: (180, 210), 8: (210, 240), 15: (250, 270), 18: (290, 300)}
+INFO:root:makespan: 300

@@ -1,0 +1,206 @@
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 18, 20, 22, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 49, 50, 51, 52, 53, 57, 58, 61, 63, 66, 67, 68, 69, 70, 72, 73, 74, 77, 82, 84, 85, 86, 96], pred: [], avg_comp_cost: 0, ranku: None, rankd: None
+INFO:root: TASK id: 1, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 2, succ: [95], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 3, succ: [13, 93], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 4, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 5, succ: [97], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 6, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 7, succ: [92], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 8, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 9, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 10, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 11, succ: [17, 91], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 12, succ: [24, 91], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 13, succ: [14], pred: [3], avg_comp_cost: 15, ranku: None, rankd: None
+INFO:root: TASK id: 14, succ: [90], pred: [13], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 15, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 16, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 17, succ: [23, 79], pred: [11], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 18, succ: [19], pred: [0], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 19, succ: [23, 89], pred: [18], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 20, succ: [21, 88], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 21, succ: [78], pred: [20], avg_comp_cost: 21, ranku: None, rankd: None
+INFO:root: TASK id: 22, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 23, succ: [79], pred: [17, 19], avg_comp_cost: 15, ranku: None, rankd: None
+INFO:root: TASK id: 24, succ: [79], pred: [12], avg_comp_cost: 15, ranku: None, rankd: None
+INFO:root: TASK id: 25, succ: [87], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 26, succ: [87], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 27, succ: [42], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 28, succ: [59], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 29, succ: [95], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 30, succ: [56], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 31, succ: [64, 94], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 32, succ: [59, 93], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 33, succ: [60], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 34, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 35, succ: [65], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 36, succ: [56], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 37, succ: [80], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 38, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 39, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 40, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 41, succ: [55], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 42, succ: [97], pred: [27], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 43, succ: [92], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 44, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 45, succ: [54], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 46, succ: [48], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 47, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 48, succ: [97], pred: [46], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 49, succ: [97], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 50, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 51, succ: [83], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 52, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 53, succ: [97], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 54, succ: [97], pred: [45], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 55, succ: [97], pred: [41], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 56, succ: [62], pred: [30, 36], avg_comp_cost: 51, ranku: None, rankd: None
+INFO:root: TASK id: 57, succ: [97], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 58, succ: [79, 91], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 59, succ: [90], pred: [28, 32], avg_comp_cost: 39, ranku: None, rankd: None
+INFO:root: TASK id: 60, succ: [97], pred: [33], avg_comp_cost: 36, ranku: None, rankd: None
+INFO:root: TASK id: 61, succ: [76], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 62, succ: [97], pred: [56], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 63, succ: [71], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 64, succ: [79, 89, 91], pred: [31], avg_comp_cost: 30, ranku: None, rankd: None
+INFO:root: TASK id: 65, succ: [97], pred: [35], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 66, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 67, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 68, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 69, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 70, succ: [78, 88], pred: [0], avg_comp_cost: 27, ranku: None, rankd: None
+INFO:root: TASK id: 71, succ: [76], pred: [63], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 72, succ: [78, 88], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 73, succ: [75], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 74, succ: [90, 93], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 75, succ: [97], pred: [73], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 76, succ: [97], pred: [61, 71], avg_comp_cost: 45, ranku: None, rankd: None
+INFO:root: TASK id: 77, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 78, succ: [79, 80, 89, 94], pred: [21, 70, 72], avg_comp_cost: 39, ranku: None, rankd: None
+INFO:root: TASK id: 79, succ: [81, 91, 92], pred: [17, 23, 24, 58, 64, 78], avg_comp_cost: 36, ranku: None, rankd: None
+INFO:root: TASK id: 80, succ: [87], pred: [37, 78], avg_comp_cost: 45, ranku: None, rankd: None
+INFO:root: TASK id: 81, succ: [87], pred: [79], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 82, succ: [87], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 83, succ: [95], pred: [51], avg_comp_cost: 42, ranku: None, rankd: None
+INFO:root: TASK id: 84, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 85, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 86, succ: [97], pred: [0], avg_comp_cost: 33, ranku: None, rankd: None
+INFO:root: TASK id: 87, succ: [97], pred: [25, 26, 80, 81, 82], avg_comp_cost: 12, ranku: None, rankd: None
+INFO:root: TASK id: 88, succ: [97], pred: [20, 70, 72], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 89, succ: [97], pred: [19, 64, 78], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 90, succ: [97], pred: [14, 59, 74], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 91, succ: [97], pred: [11, 12, 58, 64, 79], avg_comp_cost: 12, ranku: None, rankd: None
+INFO:root: TASK id: 92, succ: [97], pred: [7, 43, 79], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 93, succ: [97], pred: [3, 32, 74], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 94, succ: [97], pred: [31, 78], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 95, succ: [97], pred: [2, 29, 83], avg_comp_cost: 9, ranku: None, rankd: None
+INFO:root: TASK id: 96, succ: [97], pred: [0], avg_comp_cost: 24, ranku: None, rankd: None
+INFO:root: TASK id: 97, succ: [], pred: [1, 4, 5, 6, 8, 9, 10, 15, 16, 22, 34, 38, 39, 40, 42, 44, 47, 48, 49, 50, 52, 53, 54, 55, 57, 60, 62, 65, 66, 67, 68, 69, 75, 76, 77, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96], avg_comp_cost: 0, ranku: None, rankd: None
+INFO:root:--------------------
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 18, 20, 22, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 49, 50, 51, 52, 53, 57, 58, 61, 63, 66, 67, 68, 69, 70, 72, 73, 74, 77, 82, 84, 85, 86, 96], pred: [], avg_comp_cost: 0, ranku: 9999, rankd: 0
+INFO:root: TASK id: 1, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 2, succ: [95], pred: [0], avg_comp_cost: 27, ranku: 36, rankd: 0
+INFO:root: TASK id: 3, succ: [13, 93], pred: [0], avg_comp_cost: 33, ranku: 84, rankd: 0
+INFO:root: TASK id: 4, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 5, succ: [97], pred: [0], avg_comp_cost: 27, ranku: 27, rankd: 0
+INFO:root: TASK id: 6, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 7, succ: [92], pred: [0], avg_comp_cost: 33, ranku: 42, rankd: 0
+INFO:root: TASK id: 8, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 9, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 10, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 11, succ: [17, 91], pred: [0], avg_comp_cost: 33, ranku: 159, rankd: 0
+INFO:root: TASK id: 12, succ: [24, 91], pred: [0], avg_comp_cost: 27, ranku: 132, rankd: 0
+INFO:root: TASK id: 13, succ: [14], pred: [3], avg_comp_cost: 15, ranku: 51, rankd: 33
+INFO:root: TASK id: 14, succ: [90], pred: [13], avg_comp_cost: 27, ranku: 36, rankd: 48
+INFO:root: TASK id: 15, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 16, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 17, succ: [23, 79], pred: [11], avg_comp_cost: 21, ranku: 126, rankd: 33
+INFO:root: TASK id: 18, succ: [19], pred: [0], avg_comp_cost: 21, ranku: 153, rankd: 0
+INFO:root: TASK id: 19, succ: [23, 89], pred: [18], avg_comp_cost: 27, ranku: 132, rankd: 21
+INFO:root: TASK id: 20, succ: [21, 88], pred: [0], avg_comp_cost: 33, ranku: 183, rankd: 0
+INFO:root: TASK id: 21, succ: [78], pred: [20], avg_comp_cost: 21, ranku: 150, rankd: 33
+INFO:root: TASK id: 22, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 23, succ: [79], pred: [17, 19], avg_comp_cost: 15, ranku: 105, rankd: 54
+INFO:root: TASK id: 24, succ: [79], pred: [12], avg_comp_cost: 15, ranku: 105, rankd: 27
+INFO:root: TASK id: 25, succ: [87], pred: [0], avg_comp_cost: 33, ranku: 45, rankd: 0
+INFO:root: TASK id: 26, succ: [87], pred: [0], avg_comp_cost: 27, ranku: 39, rankd: 0
+INFO:root: TASK id: 27, succ: [42], pred: [0], avg_comp_cost: 33, ranku: 75, rankd: 0
+INFO:root: TASK id: 28, succ: [59], pred: [0], avg_comp_cost: 33, ranku: 81, rankd: 0
+INFO:root: TASK id: 29, succ: [95], pred: [0], avg_comp_cost: 27, ranku: 36, rankd: 0
+INFO:root: TASK id: 30, succ: [56], pred: [0], avg_comp_cost: 33, ranku: 126, rankd: 0
+INFO:root: TASK id: 31, succ: [64, 94], pred: [0], avg_comp_cost: 33, ranku: 153, rankd: 0
+INFO:root: TASK id: 32, succ: [59, 93], pred: [0], avg_comp_cost: 27, ranku: 75, rankd: 0
+INFO:root: TASK id: 33, succ: [60], pred: [0], avg_comp_cost: 27, ranku: 63, rankd: 0
+INFO:root: TASK id: 34, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 35, succ: [65], pred: [0], avg_comp_cost: 33, ranku: 75, rankd: 0
+INFO:root: TASK id: 36, succ: [56], pred: [0], avg_comp_cost: 33, ranku: 126, rankd: 0
+INFO:root: TASK id: 37, succ: [80], pred: [0], avg_comp_cost: 27, ranku: 84, rankd: 0
+INFO:root: TASK id: 38, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 39, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 40, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 41, succ: [55], pred: [0], avg_comp_cost: 33, ranku: 75, rankd: 0
+INFO:root: TASK id: 42, succ: [97], pred: [27], avg_comp_cost: 42, ranku: 42, rankd: 33
+INFO:root: TASK id: 43, succ: [92], pred: [0], avg_comp_cost: 27, ranku: 36, rankd: 0
+INFO:root: TASK id: 44, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 45, succ: [54], pred: [0], avg_comp_cost: 33, ranku: 75, rankd: 0
+INFO:root: TASK id: 46, succ: [48], pred: [0], avg_comp_cost: 33, ranku: 75, rankd: 0
+INFO:root: TASK id: 47, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 48, succ: [97], pred: [46], avg_comp_cost: 42, ranku: 42, rankd: 33
+INFO:root: TASK id: 49, succ: [97], pred: [0], avg_comp_cost: 27, ranku: 27, rankd: 0
+INFO:root: TASK id: 50, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 51, succ: [83], pred: [0], avg_comp_cost: 33, ranku: 84, rankd: 0
+INFO:root: TASK id: 52, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 53, succ: [97], pred: [0], avg_comp_cost: 27, ranku: 27, rankd: 0
+INFO:root: TASK id: 54, succ: [97], pred: [45], avg_comp_cost: 42, ranku: 42, rankd: 33
+INFO:root: TASK id: 55, succ: [97], pred: [41], avg_comp_cost: 42, ranku: 42, rankd: 33
+INFO:root: TASK id: 56, succ: [62], pred: [30, 36], avg_comp_cost: 51, ranku: 93, rankd: 33
+INFO:root: TASK id: 57, succ: [97], pred: [0], avg_comp_cost: 27, ranku: 27, rankd: 0
+INFO:root: TASK id: 58, succ: [79, 91], pred: [0], avg_comp_cost: 27, ranku: 117, rankd: 0
+INFO:root: TASK id: 59, succ: [90], pred: [28, 32], avg_comp_cost: 39, ranku: 48, rankd: 33
+INFO:root: TASK id: 60, succ: [97], pred: [33], avg_comp_cost: 36, ranku: 36, rankd: 27
+INFO:root: TASK id: 61, succ: [76], pred: [0], avg_comp_cost: 33, ranku: 78, rankd: 0
+INFO:root: TASK id: 62, succ: [97], pred: [56], avg_comp_cost: 42, ranku: 42, rankd: 84
+INFO:root: TASK id: 63, succ: [71], pred: [0], avg_comp_cost: 27, ranku: 114, rankd: 0
+INFO:root: TASK id: 64, succ: [79, 89, 91], pred: [31], avg_comp_cost: 30, ranku: 120, rankd: 33
+INFO:root: TASK id: 65, succ: [97], pred: [35], avg_comp_cost: 42, ranku: 42, rankd: 33
+INFO:root: TASK id: 66, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 67, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 68, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 69, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 70, succ: [78, 88], pred: [0], avg_comp_cost: 27, ranku: 156, rankd: 0
+INFO:root: TASK id: 71, succ: [76], pred: [63], avg_comp_cost: 42, ranku: 87, rankd: 27
+INFO:root: TASK id: 72, succ: [78, 88], pred: [0], avg_comp_cost: 33, ranku: 162, rankd: 0
+INFO:root: TASK id: 73, succ: [75], pred: [0], avg_comp_cost: 33, ranku: 75, rankd: 0
+INFO:root: TASK id: 74, succ: [90, 93], pred: [0], avg_comp_cost: 33, ranku: 42, rankd: 0
+INFO:root: TASK id: 75, succ: [97], pred: [73], avg_comp_cost: 42, ranku: 42, rankd: 33
+INFO:root: TASK id: 76, succ: [97], pred: [61, 71], avg_comp_cost: 45, ranku: 45, rankd: 69
+INFO:root: TASK id: 77, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 78, succ: [79, 80, 89, 94], pred: [21, 70, 72], avg_comp_cost: 39, ranku: 129, rankd: 54
+INFO:root: TASK id: 79, succ: [81, 91, 92], pred: [17, 23, 24, 58, 64, 78], avg_comp_cost: 36, ranku: 90, rankd: 93
+INFO:root: TASK id: 80, succ: [87], pred: [37, 78], avg_comp_cost: 45, ranku: 57, rankd: 93
+INFO:root: TASK id: 81, succ: [87], pred: [79], avg_comp_cost: 42, ranku: 54, rankd: 129
+INFO:root: TASK id: 82, succ: [87], pred: [0], avg_comp_cost: 33, ranku: 45, rankd: 0
+INFO:root: TASK id: 83, succ: [95], pred: [51], avg_comp_cost: 42, ranku: 51, rankd: 33
+INFO:root: TASK id: 84, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 85, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 86, succ: [97], pred: [0], avg_comp_cost: 33, ranku: 33, rankd: 0
+INFO:root: TASK id: 87, succ: [97], pred: [25, 26, 80, 81, 82], avg_comp_cost: 12, ranku: 12, rankd: 171
+INFO:root: TASK id: 88, succ: [97], pred: [20, 70, 72], avg_comp_cost: 9, ranku: 9, rankd: 33
+INFO:root: TASK id: 89, succ: [97], pred: [19, 64, 78], avg_comp_cost: 9, ranku: 9, rankd: 93
+INFO:root: TASK id: 90, succ: [97], pred: [14, 59, 74], avg_comp_cost: 9, ranku: 9, rankd: 75
+INFO:root: TASK id: 91, succ: [97], pred: [11, 12, 58, 64, 79], avg_comp_cost: 12, ranku: 12, rankd: 129
+INFO:root: TASK id: 92, succ: [97], pred: [7, 43, 79], avg_comp_cost: 9, ranku: 9, rankd: 129
+INFO:root: TASK id: 93, succ: [97], pred: [3, 32, 74], avg_comp_cost: 9, ranku: 9, rankd: 33
+INFO:root: TASK id: 94, succ: [97], pred: [31, 78], avg_comp_cost: 9, ranku: 9, rankd: 93
+INFO:root: TASK id: 95, succ: [97], pred: [2, 29, 83], avg_comp_cost: 9, ranku: 9, rankd: 75
+INFO:root: TASK id: 96, succ: [97], pred: [0], avg_comp_cost: 24, ranku: 24, rankd: 0
+INFO:root: TASK id: 97, succ: [], pred: [1, 4, 5, 6, 8, 9, 10, 15, 16, 22, 34, 38, 39, 40, 42, 44, 47, 48, 49, 50, 52, 53, 54, 55, 57, 60, 62, 65, 66, 67, 68, 69, 75, 76, 77, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96], avg_comp_cost: 0, ranku: 0, rankd: 183
+INFO:root:--------------------
+INFO:root:task scheduling order: [97, 87, 81, 91, 92, 79, 80, 89, 94, 62, 90, 95, 76, 23, 78, 14, 13, 17, 21, 42, 48, 54, 55, 56, 59, 64, 65, 75, 83, 88, 93, 24, 60, 71, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 18, 20, 22, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 49, 50, 51, 52, 53, 57, 58, 61, 63, 66, 67, 68, 69, 70, 72, 73, 74, 77, 82, 84, 85, 86, 96]
+INFO:root:tasks on processor 0: {5: (0, 36), 16: (36, 80), 27: (80, 124), 49: (124, 160), 45: (160, 204), 33: (204, 240), 35: (240, 284), 67: (284, 328), 63: (328, 364), 84: (364, 408), 37: (408, 444), 11: (444, 488), 12: (488, 524), 88: (524, 536), 28: (536, 580), 74: (580, 624), 43: (624, 660), 96: (660, 692), 97: (730, 730), 0: (0, 0)}
+INFO:root:tasks on processor 1: {6: (0, 44), 22: (44, 88), 44: (88, 132), 50: (132, 176), 57: (176, 212), 30: (212, 256), 66: (256, 300), 69: (300, 344), 77: (344, 388), 86: (388, 432), 70: (432, 468), 18: (468, 496), 58: (496, 532), 3: (532, 576), 32: (576, 612), 91: (612, 628), 93: (628, 640), 94: (640, 652), 51: (652, 696)}
+INFO:root:tasks on processor 2: {1: (0, 22), 8: (22, 44), 10: (44, 66), 34: (66, 88), 39: (88, 110), 42: (124, 152), 48: (154, 182), 54: (204, 232), 60: (240, 264), 56: (266, 300), 62: (300, 328), 73: (328, 350), 75: (350, 378), 76: (392, 422), 26: (422, 440), 21: (458, 472), 78: (480, 506), 80: (506, 536), 31: (536, 558), 64: (558, 578), 79: (578, 602), 81: (602, 630), 87: (630, 638), 90: (638, 644), 92: (660, 666), 29: (666, 684), 83: (696, 724), 95: (724, 730)}
+INFO:root:tasks on processor 3: {4: (0, 22), 9: (22, 44), 15: (44, 66), 38: (66, 88), 40: (88, 110), 47: (110, 132), 46: (132, 154), 52: (154, 176), 53: (176, 194), 41: (194, 216), 55: (216, 244), 36: (244, 266), 65: (284, 312), 68: (312, 334), 61: (334, 356), 71: (364, 392), 85: (392, 414), 25: (414, 436), 20: (436, 458), 72: (458, 480), 17: (488, 502), 19: (502, 520), 23: (520, 530), 24: (530, 540), 82: (540, 562), 89: (578, 584), 13: (584, 594), 14: (594, 612), 59: (612, 638), 7: (638, 660), 2: (660, 678)}
+INFO:root:makespan: 730
