@@ -1,4 +1,5 @@
-from example import dag, commcost, compcost
+# from stg.laplace import dag, commcost, compcost
+from util import stg_to_dag
 import statistics as stats
 from decimal import Decimal, ROUND_DOWN
 import logging
@@ -10,6 +11,19 @@ logging.basicConfig(level=logging.INFO)
 # Compute rank_u for all tasks by traversing graph upward, starting from the exit task.
 # Sort the tasks in a scheduling list by nonincreasing order of rank_u values.
 
+### for running stg task graphs
+total_cores = 4
+low_perf_multiplier = 2
+dag, _compcost = stg_to_dag('stg/fpppp')
+
+def commcost(a, b, A, B):
+    return 0
+
+def compcost(job, agent):
+    if agent == 'a' or agent == 'b':
+        return _compcost[job] * low_perf_multiplier
+    else: 
+        return _compcost[job]
 
 class Task:
     def __init__(self, num):
@@ -129,17 +143,18 @@ def assign(i, p, tasks, processors):
 def schedule(task, tasks, processors):
     seq = [eft(task.id, p.id, tasks, processors) for p in processors]
     p = seq.index(min(seq))
-    assign(task.id, p, tasks, processors)
+    if task.processor is None:
+        assign(task.id, p, tasks, processors)
 
 
 
 if __name__ == "__main__":
     # Create Processors
-    P = 3
+    P = 4
     processors = [Processor(i) for i in range(P)]
     # Create Tasks
-    N = len(dag)
-    tasks = [Task(i) for i in range(N+1)]
+    N = len(dag) - 1
+    tasks = [Task(i) for i in range(N+1)] # N+1 for non-stg
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
         agents = ''.join([chr(97+i) for i in range(P)]) # e.g., 'abc'
@@ -149,8 +164,14 @@ if __name__ == "__main__":
             tasks[x].predecessors.append(t)
         # setup entry task (id=0)
         tasks[0].avg_comp_cost = 0
-        tasks[0].successors = [1]
-        tasks[1].predecessors = [0]
+        # tasks[0].successors = [1]
+        # tasks[1].predecessors = [0]
+        
+
+    logging.info('-'*7 + ' Tasks ' + '-'*7 )
+    for task in tasks:
+        logging.info(task)
+    logging.info('-'*20)
 
     # Calculate ranku by traversing task graph upward
     for task in reversed(tasks):
@@ -161,7 +182,7 @@ if __name__ == "__main__":
         task.rankd = round(rankd(task.id, tasks), 3)
     
     # return a new sorted list, use the sorted() built-in function
-    priority_list = sorted(tasks, key=lambda x: x.ranku, reverse=True)
+    priority_list = sorted(tasks, key=lambda x: x.rankd, reverse=True)
     # priority_list = sorted(tasks, key=lambda x: x.rankd)
 
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
@@ -178,6 +199,6 @@ if __name__ == "__main__":
 
 
     for p in processors:
-        logging.info('tasks on processor %s: %s', p.id, [{t.id: (t.ast, t.aft)} for t in p.tasks])
+        logging.info('tasks on processor %s: %s', p.id, {t.id: (t.ast, t.aft) for t in p.tasks})
 
     logging.info('makespan: %s', makespan(tasks))

@@ -1,4 +1,5 @@
-from example import dag, commcost, compcost
+from stg.laplace import dag, commcost, compcost
+# from util import stg_to_dag
 import statistics as stats
 from queue import PriorityQueue
 import logging
@@ -9,6 +10,19 @@ logging.basicConfig(level=logging.INFO)
 # Set the computation costs of tasks and communication costs of edges with mean values.
 # Compute rank_u for all tasks by traversing graph upward, starting from the exit task.
 # Sort the tasks in a scheduling list by nonincreasing order of rank_u values.
+
+# total_cores = 4
+# low_perf_multiplier = 2
+# dag, _compcost = stg_to_dag('stg/sparse')
+
+# def commcost(a, b, A, B):
+#     return 0
+
+# def compcost(job, agent):
+#     if agent == 'a' or agent == 'b':
+#         return _compcost[job] * low_perf_multiplier
+#     else: 
+#         return _compcost[job]
 
 
 class Task:
@@ -139,11 +153,11 @@ def assign(i, p, tasks, processors):
 
 if __name__ == "__main__":
     # Create Processors
-    P = 3
+    P = 4
     processors = [Processor(i) for i in range(P)]
     # Create Tasks
-    N = len(dag)
-    tasks = [Task(i) for i in range(N+1)]
+    N = len(dag)+1
+    tasks = [Task(i) for i in range(N)]
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
         agents = ''.join([chr(97+i) for i in range(P)]) # e.g., 'abc'
@@ -173,7 +187,7 @@ if __name__ == "__main__":
     CP = {tasks[1],}
     # Construct Critical-Path (CP)
     selected = tasks[1]
-    while selected.id is not N:
+    while selected.id != N-1:
         pr = [tasks[t].priority for t in selected.successors]
         i = pr.index(max(pr))
         CP.add(tasks[selected.successors[i]])
@@ -192,7 +206,7 @@ if __name__ == "__main__":
     tasks[0].ast = 0
     tasks[0].aft = 0
     q = PriorityQueue()
-    q.put((-tasks[1].priority, tasks[1]))
+    q.put((-tasks[0].priority, tasks[0]))
     order = []
     while not q.empty():
         task = q.get()[1]
