@@ -1,0 +1,354 @@
+INFO:root:CP: [4, 1]
+INFO:root:CP: [4, 26, 1]
+INFO:root:CP: [4, 26, 42, 1]
+INFO:root:CP: [58, 26, 42, 1, 4]
+INFO:root:CP: [58, 26, 42, 1, 4, 92]
+INFO:root:CP: [58, 26, 166, 42, 1, 4, 92]
+INFO:root:CP: [58, 26, 166, 203, 42, 1, 4, 92]
+INFO:root:CP: [58, 26, 166, 203, 42, 1, 4, 321, 92]
+INFO:root:CP: [58, 26, 166, 203, 42, 1, 4, 321, 92, 335]
+INFO:root:CP-Processor is 2
+INFO:root:task scheduling order: [0, 1, 3, 2, 4, 9, 10, 11, 12, 13, 17, 18, 19, 15, 14, 24, 20, 22, 16, 21, 23, 25, 26, 33, 39, 36, 34, 41, 38, 37, 35, 40, 42, 49, 55, 52, 57, 56, 54, 53, 50, 51, 58, 71, 68, 65, 89, 86, 83, 80, 77, 74, 72, 70, 69, 81, 67, 66, 90, 88, 87, 85, 84, 82, 79, 78, 91, 76, 75, 73, 92, 106, 102, 123, 142, 124, 126, 144, 107, 121, 140, 146, 122, 125, 145, 141, 103, 115, 148, 118, 157, 112, 139, 135, 160, 131, 154, 128, 150, 133, 158, 108, 109, 127, 149, 129, 151, 130, 153, 132, 155, 110, 111, 134, 159, 137, 163, 136, 162, 138, 164, 105, 113, 143, 119, 161, 120, 165, 104, 114, 147, 116, 152, 117, 156, 166, 5, 6, 7, 8, 214, 215, 216, 217, 218, 213, 220, 222, 223, 225, 224, 219, 221, 226, 231, 227, 228, 229, 230, 232, 237, 246, 234, 235, 236, 255, 264, 291, 233, 318, 314, 265, 292, 238, 301, 247, 256, 283, 251, 296, 305, 278, 310, 274, 302, 266, 284, 248, 257, 293, 273, 309, 300, 269, 287, 260, 294, 258, 267, 282, 242, 298, 262, 286, 250, 253, 271, 295, 259, 289, 303, 285, 307, 304, 268, 275, 311, 277, 280, 313, 241, 316, 244, 239, 254, 270, 261, 299, 249, 263, 297, 272, 252, 290, 306, 308, 288, 245, 240, 243, 315, 276, 317, 279, 312, 281, 319, 320, 27, 43, 59, 93, 167, 204, 322, 202, 185, 189, 176, 184, 193, 180, 194, 198, 188, 197, 182, 179, 195, 200, 177, 191, 186, 178, 181, 183, 201, 199, 187, 190, 196, 192, 203, 321, 28, 29, 44, 45, 60, 61, 94, 95, 168, 169, 205, 206, 323, 324, 64, 48, 30, 47, 101, 98, 170, 97, 212, 175, 207, 174, 333, 330, 325, 329, 31, 62, 171, 99, 208, 210, 326, 331, 63, 46, 32, 100, 96, 172, 211, 173, 209, 332, 328, 327, 334, 335]
+INFO:root:------- Tasks -------
+INFO:root: TASK id: 0, succ: [1, 2, 3, 5, 9, 33, 34, 35, 36, 37, 38, 39, 40, 41, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 213, 334], pred: [], ranku: 9999, rankd: 0, processor: 0
+INFO:root: TASK id: 1, succ: [4, 22, 24, 30, 31, 32, 46, 47, 48, 62, 63, 64], pred: [0], ranku: 1592, rankd: 0, processor: 2
+INFO:root: TASK id: 2, succ: [4, 20, 25, 30, 31, 32, 46, 47, 48, 62, 63, 64], pred: [0], ranku: 1586, rankd: 0, processor: 0
+INFO:root: TASK id: 3, succ: [4, 21, 23, 30, 31, 32, 46, 47, 48, 62, 63, 64], pred: [0], ranku: 1586, rankd: 0, processor: 3
+INFO:root: TASK id: 4, succ: [26], pred: [1, 2, 3], ranku: 1565, rankd: 27, processor: 2
+INFO:root: TASK id: 5, succ: [6, 7, 8, 214], pred: [0], ranku: 773, rankd: 0, processor: 0
+INFO:root: TASK id: 6, succ: [27, 214], pred: [5], ranku: 766, rankd: 7, processor: 0
+INFO:root: TASK id: 7, succ: [28, 214], pred: [5], ranku: 766, rankd: 7, processor: 1
+INFO:root: TASK id: 8, succ: [29, 214], pred: [5], ranku: 766, rankd: 7, processor: 0
+INFO:root: TASK id: 9, succ: [10, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111], pred: [0], ranku: 1576, rankd: 0, processor: 3
+INFO:root: TASK id: 10, succ: [11, 12, 13, 14, 15, 16], pred: [9], ranku: 1554, rankd: 22, processor: 3
+INFO:root: TASK id: 11, succ: [17], pred: [10], ranku: 1547, rankd: 29, processor: 3
+INFO:root: TASK id: 12, succ: [18], pred: [10], ranku: 1547, rankd: 29, processor: 0
+INFO:root: TASK id: 13, succ: [19], pred: [10], ranku: 1547, rankd: 29, processor: 1
+INFO:root: TASK id: 14, succ: [20, 22], pred: [10], ranku: 1541, rankd: 29, processor: 1
+INFO:root: TASK id: 15, succ: [21, 24], pred: [10], ranku: 1541, rankd: 29, processor: 0
+INFO:root: TASK id: 16, succ: [23, 25], pred: [10], ranku: 1535, rankd: 29, processor: 1
+INFO:root: TASK id: 17, succ: [26, 139, 148, 157, 173, 174, 175, 176, 185, 194, 210, 211, 212, 238, 247, 256, 265, 274, 283, 292, 301, 310], pred: [11], ranku: 1534, rankd: 42, processor: 3
+INFO:root: TASK id: 18, succ: [26, 143, 152, 161, 173, 174, 175, 180, 189, 198, 210, 211, 212, 242, 251, 260, 269, 278, 287, 296, 305, 314], pred: [12], ranku: 1534, rankd: 42, processor: 3
+INFO:root: TASK id: 19, succ: [26, 147, 156, 165, 173, 174, 175, 184, 193, 202, 210, 211, 212, 246, 255, 264, 273, 282, 291, 300, 309, 318], pred: [13], ranku: 1534, rankd: 42, processor: 2
+INFO:root: TASK id: 20, succ: [26, 140, 149, 158, 173, 174, 175, 177, 186, 195, 210, 211, 212, 239, 248, 257, 266, 275, 284, 293, 302, 311], pred: [2, 14], ranku: 1528, rankd: 42, processor: 2
+INFO:root: TASK id: 21, succ: [26, 141, 150, 159, 173, 174, 175, 178, 187, 196, 210, 211, 212, 240, 249, 258, 267, 276, 285, 294, 303, 312], pred: [3, 15], ranku: 1522, rankd: 42, processor: 3
+INFO:root: TASK id: 22, succ: [26, 142, 151, 160, 173, 174, 175, 179, 188, 197, 210, 211, 212, 241, 250, 259, 268, 277, 286, 295, 304, 313], pred: [1, 14], ranku: 1528, rankd: 42, processor: 0
+INFO:root: TASK id: 23, succ: [26, 144, 153, 162, 173, 174, 175, 181, 190, 199, 210, 211, 212, 243, 252, 261, 270, 279, 288, 297, 306, 315], pred: [3, 16], ranku: 1522, rankd: 42, processor: 2
+INFO:root: TASK id: 24, succ: [26, 145, 154, 163, 173, 174, 175, 182, 191, 200, 210, 211, 212, 244, 253, 262, 271, 280, 289, 298, 307, 316], pred: [1, 15], ranku: 1528, rankd: 42, processor: 3
+INFO:root: TASK id: 25, succ: [26, 146, 155, 164, 173, 174, 175, 183, 192, 201, 210, 211, 212, 245, 254, 263, 272, 281, 290, 299, 308, 317], pred: [2, 16], ranku: 1522, rankd: 42, processor: 3
+INFO:root: TASK id: 26, succ: [42], pred: [4, 17, 18, 19, 20, 21, 22, 23, 24, 25], ranku: 1510, rankd: 82, processor: 2
+INFO:root: TASK id: 27, succ: [43], pred: [6], ranku: 490, rankd: 8, processor: 0
+INFO:root: TASK id: 28, succ: [44], pred: [7], ranku: 202, rankd: 8, processor: 0
+INFO:root: TASK id: 29, succ: [45], pred: [8], ranku: 202, rankd: 8, processor: 1
+INFO:root: TASK id: 30, succ: [170], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 31, succ: [171], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 32, succ: [172], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 33, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1411, rankd: 0, processor: 3
+INFO:root: TASK id: 34, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1399, rankd: 0, processor: 3
+INFO:root: TASK id: 35, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1399, rankd: 0, processor: 3
+INFO:root: TASK id: 36, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1405, rankd: 0, processor: 0
+INFO:root: TASK id: 37, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1399, rankd: 0, processor: 0
+INFO:root: TASK id: 38, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1399, rankd: 0, processor: 3
+INFO:root: TASK id: 39, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1405, rankd: 0, processor: 1
+INFO:root: TASK id: 40, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1393, rankd: 0, processor: 1
+INFO:root: TASK id: 41, succ: [42, 99, 100, 101, 170, 171, 172], pred: [0], ranku: 1399, rankd: 0, processor: 1
+INFO:root: TASK id: 42, succ: [58], pred: [26, 33, 34, 35, 36, 37, 38, 39, 40, 41], ranku: 1381, rankd: 211, processor: 2
+INFO:root: TASK id: 43, succ: [59], pred: [27], ranku: 462, rankd: 36, processor: 0
+INFO:root: TASK id: 44, succ: [60], pred: [28], ranku: 192, rankd: 18, processor: 0
+INFO:root: TASK id: 45, succ: [61], pred: [29], ranku: 192, rankd: 18, processor: 1
+INFO:root: TASK id: 46, succ: [96], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 47, succ: [97], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 3
+INFO:root: TASK id: 48, succ: [98], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 49, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1276, rankd: 0, processor: 3
+INFO:root: TASK id: 50, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1264, rankd: 0, processor: 3
+INFO:root: TASK id: 51, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1264, rankd: 0, processor: 1
+INFO:root: TASK id: 52, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1276, rankd: 0, processor: 3
+INFO:root: TASK id: 53, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1264, rankd: 0, processor: 3
+INFO:root: TASK id: 54, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1264, rankd: 0, processor: 0
+INFO:root: TASK id: 55, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1276, rankd: 0, processor: 0
+INFO:root: TASK id: 56, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1264, rankd: 0, processor: 1
+INFO:root: TASK id: 57, succ: [58, 96, 97, 98, 207, 208, 209], pred: [0], ranku: 1264, rankd: 0, processor: 1
+INFO:root: TASK id: 58, succ: [92], pred: [42, 49, 50, 51, 52, 53, 54, 55, 56, 57], ranku: 1252, rankd: 340, processor: 2
+INFO:root: TASK id: 59, succ: [93], pred: [43], ranku: 452, rankd: 46, processor: 3
+INFO:root: TASK id: 60, succ: [94], pred: [44], ranku: 182, rankd: 28, processor: 0
+INFO:root: TASK id: 61, succ: [95], pred: [45], ranku: 182, rankd: 28, processor: 1
+INFO:root: TASK id: 62, succ: [99], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 0
+INFO:root: TASK id: 63, succ: [100], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 64, succ: [101], pred: [1, 2, 3], ranku: 160, rankd: 27, processor: 1
+INFO:root: TASK id: 65, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 3
+INFO:root: TASK id: 66, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 1
+INFO:root: TASK id: 67, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 68, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 0
+INFO:root: TASK id: 69, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 70, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 1
+INFO:root: TASK id: 71, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 3
+INFO:root: TASK id: 72, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 0
+INFO:root: TASK id: 73, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 1
+INFO:root: TASK id: 74, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 3
+INFO:root: TASK id: 75, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 76, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 0
+INFO:root: TASK id: 77, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 1
+INFO:root: TASK id: 78, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 1
+INFO:root: TASK id: 79, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 80, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 3
+INFO:root: TASK id: 81, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 0
+INFO:root: TASK id: 82, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 0
+INFO:root: TASK id: 83, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 0
+INFO:root: TASK id: 84, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 85, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 1
+INFO:root: TASK id: 86, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 3
+INFO:root: TASK id: 87, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 88, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 0
+INFO:root: TASK id: 89, succ: [92, 325, 326, 327], pred: [0], ranku: 1144, rankd: 0, processor: 1
+INFO:root: TASK id: 90, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 91, succ: [92, 325, 326, 327], pred: [0], ranku: 1138, rankd: 0, processor: 3
+INFO:root: TASK id: 92, succ: [166], pred: [58, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91], ranku: 1123, rankd: 469, processor: 2
+INFO:root: TASK id: 93, succ: [167], pred: [59], ranku: 442, rankd: 56, processor: 3
+INFO:root: TASK id: 94, succ: [168], pred: [60], ranku: 172, rankd: 38, processor: 0
+INFO:root: TASK id: 95, succ: [169], pred: [61], ranku: 172, rankd: 38, processor: 1
+INFO:root: TASK id: 96, succ: [173], pred: [46, 49, 50, 51, 52, 53, 54, 55, 56, 57], ranku: 144, rankd: 43, processor: 1
+INFO:root: TASK id: 97, succ: [174], pred: [47, 49, 50, 51, 52, 53, 54, 55, 56, 57], ranku: 144, rankd: 43, processor: 3
+INFO:root: TASK id: 98, succ: [175], pred: [48, 49, 50, 51, 52, 53, 54, 55, 56, 57], ranku: 144, rankd: 43, processor: 1
+INFO:root: TASK id: 99, succ: [210], pred: [33, 34, 35, 36, 37, 38, 39, 40, 41, 62], ranku: 144, rankd: 43, processor: 3
+INFO:root: TASK id: 100, succ: [211], pred: [33, 34, 35, 36, 37, 38, 39, 40, 41, 63], ranku: 144, rankd: 43, processor: 0
+INFO:root: TASK id: 101, succ: [212], pred: [33, 34, 35, 36, 37, 38, 39, 40, 41, 64], ranku: 144, rankd: 43, processor: 3
+INFO:root: TASK id: 102, succ: [124, 126, 128, 131, 133, 135], pred: [9], ranku: 794, rankd: 22, processor: 0
+INFO:root: TASK id: 103, succ: [112], pred: [9], ranku: 791, rankd: 22, processor: 1
+INFO:root: TASK id: 104, succ: [116], pred: [9], ranku: 785, rankd: 22, processor: 1
+INFO:root: TASK id: 105, succ: [120], pred: [9], ranku: 785, rankd: 22, processor: 0
+INFO:root: TASK id: 106, succ: [115, 121, 123], pred: [9], ranku: 794, rankd: 22, processor: 3
+INFO:root: TASK id: 107, succ: [118, 122, 125], pred: [9], ranku: 794, rankd: 22, processor: 3
+INFO:root: TASK id: 108, succ: [113, 127, 129], pred: [9], ranku: 788, rankd: 22, processor: 0
+INFO:root: TASK id: 109, succ: [119, 130, 132], pred: [9], ranku: 788, rankd: 22, processor: 3
+INFO:root: TASK id: 110, succ: [114, 134, 137], pred: [9], ranku: 788, rankd: 22, processor: 1
+INFO:root: TASK id: 111, succ: [117, 136, 138], pred: [9], ranku: 788, rankd: 22, processor: 3
+INFO:root: TASK id: 112, succ: [139, 176, 238, 247, 256, 265, 292], pred: [103], ranku: 778, rankd: 35, processor: 1
+INFO:root: TASK id: 113, succ: [143, 180, 242, 251, 260, 269, 296], pred: [108], ranku: 772, rankd: 35, processor: 2
+INFO:root: TASK id: 114, succ: [147, 184, 246, 255, 264, 273, 300], pred: [110], ranku: 772, rankd: 35, processor: 0
+INFO:root: TASK id: 115, succ: [148, 185, 247, 265, 274, 283, 301], pred: [106], ranku: 778, rankd: 35, processor: 3
+INFO:root: TASK id: 116, succ: [152, 189, 251, 269, 278, 287, 305], pred: [104], ranku: 772, rankd: 35, processor: 1
+INFO:root: TASK id: 117, succ: [156, 193, 255, 273, 282, 291, 309], pred: [111], ranku: 772, rankd: 35, processor: 3
+INFO:root: TASK id: 118, succ: [157, 194, 256, 283, 292, 301, 310], pred: [107], ranku: 778, rankd: 35, processor: 0
+INFO:root: TASK id: 119, succ: [161, 198, 260, 287, 296, 305, 314], pred: [109], ranku: 772, rankd: 35, processor: 3
+INFO:root: TASK id: 120, succ: [165, 202, 264, 291, 300, 309, 318], pred: [105], ranku: 772, rankd: 35, processor: 2
+INFO:root: TASK id: 121, succ: [140, 177, 239, 248, 257, 266, 293], pred: [106], ranku: 781, rankd: 35, processor: 0
+INFO:root: TASK id: 122, succ: [141, 178, 240, 249, 258, 267, 294], pred: [107], ranku: 781, rankd: 35, processor: 1
+INFO:root: TASK id: 123, succ: [142, 179, 241, 250, 259, 268, 295], pred: [106], ranku: 781, rankd: 35, processor: 3
+INFO:root: TASK id: 124, succ: [144, 181, 243, 252, 261, 270, 297], pred: [102], ranku: 781, rankd: 35, processor: 0
+INFO:root: TASK id: 125, succ: [145, 182, 244, 253, 262, 271, 298], pred: [107], ranku: 781, rankd: 35, processor: 3
+INFO:root: TASK id: 126, succ: [146, 183, 245, 254, 263, 272, 299], pred: [102], ranku: 781, rankd: 35, processor: 1
+INFO:root: TASK id: 127, succ: [149, 186, 248, 266, 275, 284, 302], pred: [108], ranku: 775, rankd: 35, processor: 3
+INFO:root: TASK id: 128, succ: [150, 187, 249, 267, 276, 285, 303], pred: [102], ranku: 775, rankd: 35, processor: 0
+INFO:root: TASK id: 129, succ: [151, 188, 250, 268, 277, 286, 304], pred: [108], ranku: 775, rankd: 35, processor: 0
+INFO:root: TASK id: 130, succ: [153, 190, 252, 270, 279, 288, 306], pred: [109], ranku: 775, rankd: 35, processor: 1
+INFO:root: TASK id: 131, succ: [154, 191, 253, 271, 280, 289, 307], pred: [102], ranku: 775, rankd: 35, processor: 1
+INFO:root: TASK id: 132, succ: [155, 192, 254, 272, 281, 290, 308], pred: [109], ranku: 775, rankd: 35, processor: 0
+INFO:root: TASK id: 133, succ: [158, 195, 257, 284, 293, 302, 311], pred: [102], ranku: 775, rankd: 35, processor: 1
+INFO:root: TASK id: 134, succ: [159, 196, 258, 285, 294, 303, 312], pred: [110], ranku: 775, rankd: 35, processor: 0
+INFO:root: TASK id: 135, succ: [160, 197, 259, 286, 295, 304, 313], pred: [102], ranku: 775, rankd: 35, processor: 0
+INFO:root: TASK id: 136, succ: [162, 199, 261, 288, 297, 306, 315], pred: [111], ranku: 775, rankd: 35, processor: 3
+INFO:root: TASK id: 137, succ: [163, 200, 262, 289, 298, 307, 316], pred: [110], ranku: 775, rankd: 35, processor: 1
+INFO:root: TASK id: 138, succ: [164, 201, 263, 290, 299, 308, 317], pred: [111], ranku: 775, rankd: 35, processor: 1
+INFO:root: TASK id: 139, succ: [166, 331, 332, 333], pred: [17, 112], ranku: 760, rankd: 66, processor: 3
+INFO:root: TASK id: 140, succ: [166, 331, 332, 333], pred: [20, 121], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 141, succ: [166, 331, 332, 333], pred: [21, 122], ranku: 760, rankd: 56, processor: 0
+INFO:root: TASK id: 142, succ: [166, 331, 332, 333], pred: [22, 123], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 143, succ: [166, 331, 332, 333], pred: [18, 113], ranku: 760, rankd: 66, processor: 2
+INFO:root: TASK id: 144, succ: [166, 331, 332, 333], pred: [23, 124], ranku: 760, rankd: 56, processor: 3
+INFO:root: TASK id: 145, succ: [166, 331, 332, 333], pred: [24, 125], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 146, succ: [166, 331, 332, 333], pred: [25, 126], ranku: 760, rankd: 56, processor: 1
+INFO:root: TASK id: 147, succ: [166, 331, 332, 333], pred: [19, 114], ranku: 760, rankd: 66, processor: 3
+INFO:root: TASK id: 148, succ: [166, 331, 332, 333], pred: [17, 115], ranku: 760, rankd: 66, processor: 3
+INFO:root: TASK id: 149, succ: [166, 331, 332, 333], pred: [20, 127], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 150, succ: [166, 331, 332, 333], pred: [21, 128], ranku: 760, rankd: 54, processor: 3
+INFO:root: TASK id: 151, succ: [166, 331, 332, 333], pred: [22, 129], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 152, succ: [166, 331, 332, 333], pred: [18, 116], ranku: 760, rankd: 66, processor: 2
+INFO:root: TASK id: 153, succ: [166, 331, 332, 333], pred: [23, 130], ranku: 760, rankd: 54, processor: 3
+INFO:root: TASK id: 154, succ: [166, 331, 332, 333], pred: [24, 131], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 155, succ: [166, 331, 332, 333], pred: [25, 132], ranku: 760, rankd: 54, processor: 3
+INFO:root: TASK id: 156, succ: [166, 331, 332, 333], pred: [19, 117], ranku: 760, rankd: 66, processor: 2
+INFO:root: TASK id: 157, succ: [166, 331, 332, 333], pred: [17, 118], ranku: 760, rankd: 66, processor: 3
+INFO:root: TASK id: 158, succ: [166, 331, 332, 333], pred: [20, 133], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 159, succ: [166, 331, 332, 333], pred: [21, 134], ranku: 760, rankd: 54, processor: 3
+INFO:root: TASK id: 160, succ: [166, 331, 332, 333], pred: [22, 135], ranku: 760, rankd: 60, processor: 3
+INFO:root: TASK id: 161, succ: [166, 331, 332, 333], pred: [18, 119], ranku: 760, rankd: 66, processor: 3
+INFO:root: TASK id: 162, succ: [166, 331, 332, 333], pred: [23, 136], ranku: 760, rankd: 54, processor: 2
+INFO:root: TASK id: 163, succ: [166, 331, 332, 333], pred: [24, 137], ranku: 760, rankd: 60, processor: 0
+INFO:root: TASK id: 164, succ: [166, 331, 332, 333], pred: [25, 138], ranku: 760, rankd: 54, processor: 3
+INFO:root: TASK id: 165, succ: [166, 331, 332, 333], pred: [19, 120], ranku: 760, rankd: 66, processor: 2
+INFO:root: TASK id: 166, succ: [203], pred: [92, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165], ranku: 751, rankd: 841, processor: 2
+INFO:root: TASK id: 167, succ: [204], pred: [93], ranku: 414, rankd: 84, processor: 3
+INFO:root: TASK id: 168, succ: [205], pred: [94], ranku: 144, rankd: 66, processor: 0
+INFO:root: TASK id: 169, succ: [206], pred: [95], ranku: 144, rankd: 66, processor: 1
+INFO:root: TASK id: 170, succ: [207], pred: [30, 33, 34, 35, 36, 37, 38, 39, 40, 41], ranku: 144, rankd: 43, processor: 3
+INFO:root: TASK id: 171, succ: [208], pred: [31, 33, 34, 35, 36, 37, 38, 39, 40, 41], ranku: 144, rankd: 43, processor: 3
+INFO:root: TASK id: 172, succ: [209], pred: [32, 33, 34, 35, 36, 37, 38, 39, 40, 41], ranku: 144, rankd: 43, processor: 0
+INFO:root: TASK id: 173, succ: [328], pred: [17, 18, 19, 20, 21, 22, 23, 24, 25, 96], ranku: 116, rankd: 71, processor: 1
+INFO:root: TASK id: 174, succ: [329], pred: [17, 18, 19, 20, 21, 22, 23, 24, 25, 97], ranku: 116, rankd: 71, processor: 3
+INFO:root: TASK id: 175, succ: [330], pred: [17, 18, 19, 20, 21, 22, 23, 24, 25, 98], ranku: 116, rankd: 71, processor: 3
+INFO:root: TASK id: 176, succ: [203, 328, 329, 330], pred: [17, 112], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 177, succ: [203, 328, 329, 330], pred: [20, 121], ranku: 388, rankd: 60, processor: 0
+INFO:root: TASK id: 178, succ: [203, 328, 329, 330], pred: [21, 122], ranku: 388, rankd: 56, processor: 1
+INFO:root: TASK id: 179, succ: [203, 328, 329, 330], pred: [22, 123], ranku: 388, rankd: 60, processor: 1
+INFO:root: TASK id: 180, succ: [203, 328, 329, 330], pred: [18, 113], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 181, succ: [203, 328, 329, 330], pred: [23, 124], ranku: 388, rankd: 56, processor: 0
+INFO:root: TASK id: 182, succ: [203, 328, 329, 330], pred: [24, 125], ranku: 388, rankd: 60, processor: 0
+INFO:root: TASK id: 183, succ: [203, 328, 329, 330], pred: [25, 126], ranku: 388, rankd: 56, processor: 1
+INFO:root: TASK id: 184, succ: [203, 328, 329, 330], pred: [19, 114], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 185, succ: [203, 328, 329, 330], pred: [17, 115], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 186, succ: [203, 328, 329, 330], pred: [20, 127], ranku: 388, rankd: 60, processor: 0
+INFO:root: TASK id: 187, succ: [203, 328, 329, 330], pred: [21, 128], ranku: 388, rankd: 54, processor: 0
+INFO:root: TASK id: 188, succ: [203, 328, 329, 330], pred: [22, 129], ranku: 388, rankd: 60, processor: 0
+INFO:root: TASK id: 189, succ: [203, 328, 329, 330], pred: [18, 116], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 190, succ: [203, 328, 329, 330], pred: [23, 130], ranku: 388, rankd: 54, processor: 1
+INFO:root: TASK id: 191, succ: [203, 328, 329, 330], pred: [24, 131], ranku: 388, rankd: 60, processor: 1
+INFO:root: TASK id: 192, succ: [203, 328, 329, 330], pred: [25, 132], ranku: 388, rankd: 54, processor: 1
+INFO:root: TASK id: 193, succ: [203, 328, 329, 330], pred: [19, 117], ranku: 388, rankd: 66, processor: 0
+INFO:root: TASK id: 194, succ: [203, 328, 329, 330], pred: [17, 118], ranku: 388, rankd: 66, processor: 0
+INFO:root: TASK id: 195, succ: [203, 328, 329, 330], pred: [20, 133], ranku: 388, rankd: 60, processor: 0
+INFO:root: TASK id: 196, succ: [203, 328, 329, 330], pred: [21, 134], ranku: 388, rankd: 54, processor: 0
+INFO:root: TASK id: 197, succ: [203, 328, 329, 330], pred: [22, 135], ranku: 388, rankd: 60, processor: 1
+INFO:root: TASK id: 198, succ: [203, 328, 329, 330], pred: [18, 119], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 199, succ: [203, 328, 329, 330], pred: [23, 136], ranku: 388, rankd: 54, processor: 1
+INFO:root: TASK id: 200, succ: [203, 328, 329, 330], pred: [24, 137], ranku: 388, rankd: 60, processor: 1
+INFO:root: TASK id: 201, succ: [203, 328, 329, 330], pred: [25, 138], ranku: 388, rankd: 54, processor: 0
+INFO:root: TASK id: 202, succ: [203, 328, 329, 330], pred: [19, 120], ranku: 388, rankd: 66, processor: 1
+INFO:root: TASK id: 203, succ: [321], pred: [166, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202], ranku: 379, rankd: 1213, processor: 2
+INFO:root: TASK id: 204, succ: [322], pred: [167], ranku: 332, rankd: 166, processor: 3
+INFO:root: TASK id: 205, succ: [323], pred: [168], ranku: 116, rankd: 94, processor: 0
+INFO:root: TASK id: 206, succ: [324], pred: [169], ranku: 116, rankd: 94, processor: 1
+INFO:root: TASK id: 207, succ: [325], pred: [49, 50, 51, 52, 53, 54, 55, 56, 57, 170], ranku: 116, rankd: 71, processor: 0
+INFO:root: TASK id: 208, succ: [326], pred: [49, 50, 51, 52, 53, 54, 55, 56, 57, 171], ranku: 116, rankd: 71, processor: 0
+INFO:root: TASK id: 209, succ: [327], pred: [49, 50, 51, 52, 53, 54, 55, 56, 57, 172], ranku: 116, rankd: 71, processor: 2
+INFO:root: TASK id: 210, succ: [331], pred: [17, 18, 19, 20, 21, 22, 23, 24, 25, 99], ranku: 116, rankd: 71, processor: 3
+INFO:root: TASK id: 211, succ: [332], pred: [17, 18, 19, 20, 21, 22, 23, 24, 25, 100], ranku: 116, rankd: 71, processor: 3
+INFO:root: TASK id: 212, succ: [333], pred: [17, 18, 19, 20, 21, 22, 23, 24, 25, 101], ranku: 116, rankd: 71, processor: 1
+INFO:root: TASK id: 213, succ: [220, 226, 232], pred: [0], ranku: 754, rankd: 0, processor: 1
+INFO:root: TASK id: 214, succ: [215, 218, 220], pred: [5, 6, 7, 8], ranku: 765, rankd: 8, processor: 3
+INFO:root: TASK id: 215, succ: [216, 220, 224, 225, 229, 231, 234, 237], pred: [214], ranku: 758, rankd: 15, processor: 3
+INFO:root: TASK id: 216, succ: [217, 222, 223, 228, 230, 235, 236], pred: [215], ranku: 730, rankd: 43, processor: 3
+INFO:root: TASK id: 217, succ: [221, 227, 233], pred: [216], ranku: 717, rankd: 56, processor: 3
+INFO:root: TASK id: 218, succ: [219, 220, 225, 231, 237], pred: [214], ranku: 747, rankd: 15, processor: 0
+INFO:root: TASK id: 219, succ: [221, 227, 233], pred: [218], ranku: 717, rankd: 36, processor: 3
+INFO:root: TASK id: 220, succ: [221, 222, 223, 224, 225, 226], pred: [213, 214, 215, 218], ranku: 726, rankd: 43, processor: 3
+INFO:root: TASK id: 221, succ: [226, 238], pred: [217, 219, 220], ranku: 710, rankd: 63, processor: 3
+INFO:root: TASK id: 222, succ: [226, 265], pred: [216, 220], ranku: 715, rankd: 56, processor: 3
+INFO:root: TASK id: 223, succ: [226, 292], pred: [216, 220], ranku: 715, rankd: 56, processor: 0
+INFO:root: TASK id: 224, succ: [226, 301], pred: [215, 220], ranku: 715, rankd: 50, processor: 1
+INFO:root: TASK id: 225, succ: [226, 274], pred: [215, 218, 220], ranku: 719, rankd: 50, processor: 3
+INFO:root: TASK id: 226, succ: [227, 228, 229, 230, 231, 232], pred: [213, 220, 221, 222, 223, 224, 225], ranku: 700, rankd: 73, processor: 3
+INFO:root: TASK id: 227, succ: [232, 278], pred: [217, 219, 226], ranku: 690, rankd: 74, processor: 0
+INFO:root: TASK id: 228, succ: [232, 251], pred: [216, 226], ranku: 689, rankd: 74, processor: 1
+INFO:root: TASK id: 229, succ: [232, 296], pred: [215, 226], ranku: 689, rankd: 74, processor: 3
+INFO:root: TASK id: 230, succ: [232, 305], pred: [216, 226], ranku: 689, rankd: 74, processor: 1
+INFO:root: TASK id: 231, succ: [232, 314], pred: [215, 218, 226], ranku: 699, rankd: 74, processor: 3
+INFO:root: TASK id: 232, succ: [233, 234, 235, 236, 237], pred: [213, 226, 227, 228, 229, 230, 231], ranku: 680, rankd: 93, processor: 3
+INFO:root: TASK id: 233, succ: [318], pred: [217, 219, 232], ranku: 670, rankd: 100, processor: 3
+INFO:root: TASK id: 234, succ: [255], pred: [215, 232], ranku: 671, rankd: 100, processor: 0
+INFO:root: TASK id: 235, succ: [264], pred: [216, 232], ranku: 671, rankd: 100, processor: 1
+INFO:root: TASK id: 236, succ: [291], pred: [216, 232], ranku: 671, rankd: 100, processor: 0
+INFO:root: TASK id: 237, succ: [246], pred: [215, 218, 232], ranku: 673, rankd: 100, processor: 3
+INFO:root: TASK id: 238, succ: [319], pred: [17, 112, 221], ranku: 674, rankd: 73, processor: 3
+INFO:root: TASK id: 239, succ: [319], pred: [20, 121], ranku: 668, rankd: 60, processor: 1
+INFO:root: TASK id: 240, succ: [319], pred: [21, 122], ranku: 668, rankd: 56, processor: 3
+INFO:root: TASK id: 241, succ: [319], pred: [22, 123], ranku: 668, rankd: 60, processor: 3
+INFO:root: TASK id: 242, succ: [319], pred: [18, 113], ranku: 666, rankd: 66, processor: 3
+INFO:root: TASK id: 243, succ: [319], pred: [23, 124], ranku: 668, rankd: 56, processor: 2
+INFO:root: TASK id: 244, succ: [319], pred: [24, 125], ranku: 668, rankd: 60, processor: 0
+INFO:root: TASK id: 245, succ: [319], pred: [25, 126], ranku: 668, rankd: 56, processor: 2
+INFO:root: TASK id: 246, succ: [319], pred: [19, 114, 237], ranku: 660, rankd: 113, processor: 3
+INFO:root: TASK id: 247, succ: [319], pred: [17, 112, 115], ranku: 680, rankd: 66, processor: 2
+INFO:root: TASK id: 248, succ: [319], pred: [20, 121, 127], ranku: 677, rankd: 60, processor: 2
+INFO:root: TASK id: 249, succ: [319], pred: [21, 122, 128], ranku: 671, rankd: 56, processor: 0
+INFO:root: TASK id: 250, succ: [319], pred: [22, 123, 129], ranku: 672, rankd: 60, processor: 0
+INFO:root: TASK id: 251, succ: [319], pred: [18, 113, 116, 228], ranku: 662, rankd: 83, processor: 2
+INFO:root: TASK id: 252, succ: [319], pred: [23, 124, 130], ranku: 671, rankd: 56, processor: 3
+INFO:root: TASK id: 253, succ: [319], pred: [24, 125, 131], ranku: 671, rankd: 60, processor: 1
+INFO:root: TASK id: 254, succ: [319], pred: [25, 126, 132], ranku: 672, rankd: 56, processor: 3
+INFO:root: TASK id: 255, succ: [319], pred: [19, 114, 117, 234], ranku: 662, rankd: 109, processor: 3
+INFO:root: TASK id: 256, succ: [319], pred: [17, 112, 118], ranku: 680, rankd: 66, processor: 3
+INFO:root: TASK id: 257, succ: [319], pred: [20, 121, 133], ranku: 677, rankd: 60, processor: 3
+INFO:root: TASK id: 258, succ: [319], pred: [21, 122, 134], ranku: 678, rankd: 56, processor: 0
+INFO:root: TASK id: 259, succ: [319], pred: [22, 123, 135], ranku: 671, rankd: 60, processor: 3
+INFO:root: TASK id: 260, succ: [319], pred: [18, 113, 119], ranku: 668, rankd: 66, processor: 2
+INFO:root: TASK id: 261, succ: [319], pred: [23, 124, 136], ranku: 671, rankd: 56, processor: 3
+INFO:root: TASK id: 262, succ: [319], pred: [24, 125, 137], ranku: 672, rankd: 60, processor: 3
+INFO:root: TASK id: 263, succ: [319], pred: [25, 126, 138], ranku: 671, rankd: 56, processor: 1
+INFO:root: TASK id: 264, succ: [319], pred: [19, 114, 120, 235], ranku: 662, rankd: 109, processor: 1
+INFO:root: TASK id: 265, succ: [319], pred: [17, 112, 115, 222], ranku: 680, rankd: 71, processor: 3
+INFO:root: TASK id: 266, succ: [319], pred: [20, 121, 127], ranku: 678, rankd: 60, processor: 0
+INFO:root: TASK id: 267, succ: [319], pred: [21, 122, 128], ranku: 677, rankd: 56, processor: 1
+INFO:root: TASK id: 268, succ: [319], pred: [22, 123, 129], ranku: 671, rankd: 60, processor: 3
+INFO:root: TASK id: 269, succ: [319], pred: [18, 113, 116], ranku: 668, rankd: 66, processor: 2
+INFO:root: TASK id: 270, succ: [319], pred: [23, 124, 130], ranku: 672, rankd: 56, processor: 2
+INFO:root: TASK id: 271, succ: [319], pred: [24, 125, 131], ranku: 671, rankd: 60, processor: 3
+INFO:root: TASK id: 272, succ: [319], pred: [25, 126, 132], ranku: 671, rankd: 56, processor: 2
+INFO:root: TASK id: 273, succ: [319], pred: [19, 114, 117], ranku: 668, rankd: 66, processor: 0
+INFO:root: TASK id: 274, succ: [319], pred: [17, 115, 225], ranku: 672, rankd: 69, processor: 2
+INFO:root: TASK id: 275, succ: [319], pred: [20, 127], ranku: 668, rankd: 60, processor: 2
+INFO:root: TASK id: 276, succ: [319], pred: [21, 128], ranku: 668, rankd: 54, processor: 1
+INFO:root: TASK id: 277, succ: [319], pred: [22, 129], ranku: 668, rankd: 60, processor: 1
+INFO:root: TASK id: 278, succ: [319], pred: [18, 116, 227], ranku: 660, rankd: 84, processor: 2
+INFO:root: TASK id: 279, succ: [319], pred: [23, 130], ranku: 668, rankd: 54, processor: 2
+INFO:root: TASK id: 280, succ: [319], pred: [24, 131], ranku: 668, rankd: 60, processor: 3
+INFO:root: TASK id: 281, succ: [319], pred: [25, 132], ranku: 668, rankd: 54, processor: 2
+INFO:root: TASK id: 282, succ: [319], pred: [19, 117], ranku: 666, rankd: 66, processor: 2
+INFO:root: TASK id: 283, succ: [319], pred: [17, 115, 118], ranku: 680, rankd: 66, processor: 0
+INFO:root: TASK id: 284, succ: [319], pred: [20, 127, 133], ranku: 677, rankd: 60, processor: 1
+INFO:root: TASK id: 285, succ: [319], pred: [21, 128, 134], ranku: 677, rankd: 54, processor: 1
+INFO:root: TASK id: 286, succ: [319], pred: [22, 129, 135], ranku: 672, rankd: 60, processor: 2
+INFO:root: TASK id: 287, succ: [319], pred: [18, 116, 119], ranku: 668, rankd: 66, processor: 3
+INFO:root: TASK id: 288, succ: [319], pred: [23, 130, 136], ranku: 671, rankd: 54, processor: 3
+INFO:root: TASK id: 289, succ: [319], pred: [24, 131, 137], ranku: 671, rankd: 60, processor: 2
+INFO:root: TASK id: 290, succ: [319], pred: [25, 132, 138], ranku: 672, rankd: 54, processor: 2
+INFO:root: TASK id: 291, succ: [319], pred: [19, 117, 120, 236], ranku: 662, rankd: 109, processor: 0
+INFO:root: TASK id: 292, succ: [319], pred: [17, 112, 118, 223], ranku: 680, rankd: 71, processor: 0
+INFO:root: TASK id: 293, succ: [319], pred: [20, 121, 133], ranku: 677, rankd: 60, processor: 2
+INFO:root: TASK id: 294, succ: [319], pred: [21, 122, 134], ranku: 678, rankd: 56, processor: 3
+INFO:root: TASK id: 295, succ: [319], pred: [22, 123, 135], ranku: 671, rankd: 60, processor: 2
+INFO:root: TASK id: 296, succ: [319], pred: [18, 113, 119, 229], ranku: 662, rankd: 83, processor: 3
+INFO:root: TASK id: 297, succ: [319], pred: [23, 124, 136], ranku: 671, rankd: 56, processor: 3
+INFO:root: TASK id: 298, succ: [319], pred: [24, 125, 137], ranku: 672, rankd: 60, processor: 2
+INFO:root: TASK id: 299, succ: [319], pred: [25, 126, 138], ranku: 671, rankd: 56, processor: 2
+INFO:root: TASK id: 300, succ: [319], pred: [19, 114, 120], ranku: 668, rankd: 66, processor: 1
+INFO:root: TASK id: 301, succ: [319], pred: [17, 115, 118, 224], ranku: 680, rankd: 66, processor: 1
+INFO:root: TASK id: 302, succ: [319], pred: [20, 127, 133], ranku: 678, rankd: 60, processor: 3
+INFO:root: TASK id: 303, succ: [319], pred: [21, 128, 134], ranku: 677, rankd: 54, processor: 0
+INFO:root: TASK id: 304, succ: [319], pred: [22, 129, 135], ranku: 671, rankd: 60, processor: 2
+INFO:root: TASK id: 305, succ: [319], pred: [18, 116, 119, 230], ranku: 662, rankd: 83, processor: 1
+INFO:root: TASK id: 306, succ: [319], pred: [23, 130, 136], ranku: 672, rankd: 54, processor: 0
+INFO:root: TASK id: 307, succ: [319], pred: [24, 131, 137], ranku: 671, rankd: 60, processor: 3
+INFO:root: TASK id: 308, succ: [319], pred: [25, 132, 138], ranku: 671, rankd: 54, processor: 1
+INFO:root: TASK id: 309, succ: [319], pred: [19, 117, 120], ranku: 668, rankd: 66, processor: 3
+INFO:root: TASK id: 310, succ: [319], pred: [17, 118], ranku: 678, rankd: 66, processor: 3
+INFO:root: TASK id: 311, succ: [319], pred: [20, 133], ranku: 668, rankd: 60, processor: 0
+INFO:root: TASK id: 312, succ: [319], pred: [21, 134], ranku: 668, rankd: 54, processor: 3
+INFO:root: TASK id: 313, succ: [319], pred: [22, 135], ranku: 668, rankd: 60, processor: 2
+INFO:root: TASK id: 314, succ: [319], pred: [18, 119, 231], ranku: 660, rankd: 93, processor: 1
+INFO:root: TASK id: 315, succ: [319], pred: [23, 136], ranku: 668, rankd: 54, processor: 0
+INFO:root: TASK id: 316, succ: [319], pred: [24, 137], ranku: 668, rankd: 60, processor: 2
+INFO:root: TASK id: 317, succ: [319], pred: [25, 138], ranku: 668, rankd: 54, processor: 3
+INFO:root: TASK id: 318, succ: [319], pred: [19, 120, 233], ranku: 660, rankd: 110, processor: 3
+INFO:root: TASK id: 319, succ: [320], pred: [238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318], ranku: 626, rankd: 147, processor: 2
+INFO:root: TASK id: 320, succ: [321], pred: [319], ranku: 20, rankd: 753, processor: 2
+INFO:root: TASK id: 321, succ: [335], pred: [203, 320], ranku: 7, rankd: 1585, processor: 2
+INFO:root: TASK id: 322, succ: [335], pred: [204], ranku: 250, rankd: 248, processor: 3
+INFO:root: TASK id: 323, succ: [335], pred: [205], ranku: 88, rankd: 122, processor: 3
+INFO:root: TASK id: 324, succ: [335], pred: [206], ranku: 88, rankd: 122, processor: 0
+INFO:root: TASK id: 325, succ: [335], pred: [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 207], ranku: 88, rankd: 99, processor: 0
+INFO:root: TASK id: 326, succ: [335], pred: [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 208], ranku: 88, rankd: 99, processor: 3
+INFO:root: TASK id: 327, succ: [335], pred: [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 209], ranku: 88, rankd: 99, processor: 3
+INFO:root: TASK id: 328, succ: [335], pred: [173, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202], ranku: 88, rankd: 99, processor: 2
+INFO:root: TASK id: 329, succ: [335], pred: [174, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202], ranku: 88, rankd: 99, processor: 3
+INFO:root: TASK id: 330, succ: [335], pred: [175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202], ranku: 88, rankd: 99, processor: 1
+INFO:root: TASK id: 331, succ: [335], pred: [139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 210], ranku: 88, rankd: 99, processor: 2
+INFO:root: TASK id: 332, succ: [335], pred: [139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 211], ranku: 88, rankd: 99, processor: 3
+INFO:root: TASK id: 333, succ: [335], pred: [139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 212], ranku: 88, rankd: 99, processor: 3
+INFO:root: TASK id: 334, succ: [335], pred: [0], ranku: 24, rankd: 0, processor: 0
+INFO:root: TASK id: 335, succ: [], pred: [321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334], ranku: 0, rankd: 1592, processor: 2
+INFO:root:--------------------
+INFO:root:tasks on processor 0: {0: (0, 0), 2: (0, 28), 12: (34, 52), 15: (52, 70), 22: (70, 94), 36: (94, 126), 37: (126, 150), 55: (150, 182), 54: (182, 198), 68: (198, 226), 83: (226, 254), 72: (254, 274), 81: (274, 294), 88: (294, 314), 82: (314, 334), 76: (334, 354), 102: (354, 372), 124: (372, 400), 121: (400, 428), 141: (443, 455), 118: (455, 479), 135: (479, 499), 128: (499, 519), 108: (519, 537), 129: (537, 557), 132: (557, 577), 134: (578, 598), 163: (598, 610), 105: (610, 628), 114: (628, 644), 5: (644, 654), 6: (654, 656), 8: (656, 658), 218: (663, 691), 223: (701, 721), 227: (737, 751), 234: (766, 778), 236: (778, 790), 291: (790, 838), 292: (838, 910), 283: (910, 982), 266: (982, 1052), 273: (1052, 1108), 258: (1108, 1178), 250: (1178, 1240), 303: (1240, 1308), 311: (1308, 1364), 244: (1364, 1420), 249: (1420, 1480), 306: (1480, 1542), 315: (1542, 1598), 27: (1598, 1636), 43: (1636, 1650), 193: (1650, 1662), 194: (1662, 1674), 188: (1674, 1686), 182: (1686, 1698), 195: (1698, 1710), 177: (1710, 1722), 186: (1722, 1734), 181: (1734, 1746), 201: (1746, 1758), 187: (1758, 1770), 196: (1770, 1782), 28: (1782, 1796), 44: (1796, 1810), 60: (1810, 1824), 94: (1824, 1862), 168: (1862, 1900), 205: (1900, 1938), 324: (1948, 2066), 207: (2066, 2104), 325: (2104, 2222), 62: (2222, 2244), 208: (2258, 2296), 100: (2296, 2334), 172: (2334, 2372), 334: (2372, 2404)}
+INFO:root:tasks on processor 1: {13: (34, 52), 14: (52, 70), 16: (70, 88), 39: (88, 120), 41: (120, 144), 40: (144, 160), 57: (160, 176), 56: (176, 192), 51: (192, 208), 89: (208, 236), 77: (236, 264), 70: (264, 284), 66: (284, 304), 85: (304, 324), 78: (324, 344), 73: (344, 364), 126: (372, 400), 146: (400, 412), 122: (415, 443), 103: (443, 461), 112: (461, 485), 131: (485, 505), 133: (505, 525), 130: (540, 560), 110: (560, 578), 137: (578, 598), 138: (598, 618), 104: (618, 636), 116: (636, 652), 7: (654, 656), 213: (656, 694), 224: (701, 721), 228: (737, 749), 230: (749, 761), 235: (766, 778), 264: (778, 826), 314: (826, 872), 301: (872, 944), 305: (944, 992), 284: (992, 1060), 300: (1060, 1116), 267: (1116, 1184), 253: (1184, 1244), 285: (1244, 1312), 277: (1312, 1368), 239: (1368, 1424), 263: (1424, 1484), 308: (1484, 1544), 276: (1544, 1600), 202: (1600, 1612), 185: (1612, 1624), 189: (1624, 1636), 176: (1636, 1648), 184: (1648, 1660), 180: (1660, 1672), 198: (1672, 1684), 197: (1684, 1696), 179: (1696, 1708), 200: (1708, 1720), 191: (1720, 1732), 178: (1732, 1744), 183: (1744, 1756), 199: (1756, 1768), 190: (1768, 1780), 192: (1780, 1792), 29: (1792, 1806), 45: (1806, 1820), 61: (1820, 1834), 95: (1834, 1872), 169: (1872, 1910), 206: (1910, 1948), 64: (1948, 1970), 48: (1970, 1992), 30: (1992, 2014), 98: (2014, 2052), 212: (2052, 2090), 330: (2099, 2217), 31: (2217, 2239), 63: (2239, 2261), 46: (2261, 2283), 32: (2283, 2305), 96: (2305, 2343), 173: (2343, 2381)}
+INFO:root:tasks on processor 2: {1: (0, 18), 4: (28, 65), 19: (65, 81), 20: (81, 93), 23: (93, 101), 26: (103, 189), 42: (189, 275), 58: (275, 361), 92: (364, 612), 162: (614, 620), 113: (620, 628), 143: (628, 634), 120: (634, 642), 165: (642, 648), 152: (652, 658), 156: (658, 664), 166: (664, 912), 247: (912, 948), 251: (948, 972), 278: (972, 995), 274: (995, 1026), 248: (1026, 1060), 293: (1060, 1094), 269: (1094, 1122), 260: (1122, 1150), 282: (1150, 1177), 298: (1177, 1208), 286: (1208, 1239), 295: (1239, 1269), 289: (1269, 1299), 304: (1299, 1329), 275: (1329, 1357), 313: (1357, 1385), 316: (1385, 1413), 270: (1413, 1444), 299: (1444, 1474), 272: (1474, 1504), 290: (1504, 1535), 245: (1535, 1563), 243: (1563, 1591), 279: (1591, 1619), 281: (1619, 1647), 319: (1647, 2051), 320: (2051, 2060), 203: (2060, 2308), 321: (2308, 2313), 331: (2313, 2372), 209: (2372, 2391), 328: (2391, 2450), 335: (2492, 2492)}
+INFO:root:tasks on processor 3: {3: (0, 14), 9: (14, 29), 10: (29, 34), 11: (34, 43), 17: (43, 59), 18: (59, 75), 24: (75, 87), 21: (87, 95), 25: (95, 103), 33: (103, 123), 34: (123, 135), 38: (135, 147), 35: (147, 159), 49: (159, 175), 52: (175, 191), 53: (191, 199), 50: (199, 207), 71: (207, 221), 65: (221, 235), 86: (235, 249), 80: (249, 263), 74: (263, 277), 69: (277, 287), 67: (287, 297), 90: (297, 307), 87: (307, 317), 84: (317, 327), 79: (327, 337), 91: (337, 347), 75: (347, 357), 106: (357, 366), 123: (366, 380), 142: (380, 386), 144: (400, 406), 107: (406, 415), 140: (428, 434), 125: (434, 448), 145: (448, 454), 115: (454, 466), 148: (466, 472), 157: (479, 485), 139: (485, 491), 160: (499, 505), 154: (505, 511), 150: (519, 525), 158: (525, 531), 109: (531, 540), 127: (540, 550), 149: (550, 556), 151: (557, 563), 153: (563, 569), 155: (577, 583), 111: (583, 592), 159: (598, 604), 136: (604, 614), 164: (618, 624), 119: (624, 632), 161: (632, 638), 147: (644, 650), 117: (650, 658), 214: (658, 663), 215: (663, 682), 216: (682, 691), 217: (691, 696), 220: (696, 701), 222: (701, 711), 225: (711, 724), 219: (724, 729), 221: (729, 736), 226: (736, 737), 231: (737, 750), 229: (750, 756), 232: (761, 766), 237: (766, 775), 246: (775, 798), 255: (798, 822), 233: (822, 829), 318: (829, 852), 265: (852, 888), 238: (888, 920), 256: (920, 956), 296: (956, 980), 310: (980, 1015), 302: (1015, 1050), 257: (1050, 1084), 309: (1084, 1112), 287: (1112, 1140), 294: (1140, 1175), 242: (1175, 1202), 262: (1202, 1233), 271: (1233, 1263), 259: (1263, 1293), 307: (1293, 1323), 268: (1323, 1353), 280: (1353, 1381), 241: (1381, 1409), 254: (1409, 1440), 261: (1440, 1470), 297: (1470, 1500), 252: (1500, 1530), 288: (1530, 1560), 240: (1560, 1588), 317: (1588, 1616), 312: (1616, 1644), 59: (1650, 1657), 93: (1657, 1676), 167: (1676, 1731), 204: (1731, 1786), 322: (1786, 1953), 323: (1953, 2012), 47: (2012, 2023), 101: (2023, 2042), 170: (2042, 2061), 97: (2061, 2080), 175: (2080, 2099), 174: (2099, 2118), 333: (2118, 2177), 329: (2177, 2236), 171: (2239, 2258), 99: (2258, 2277), 210: (2277, 2296), 326: (2296, 2355), 211: (2355, 2374), 332: (2374, 2433), 327: (2433, 2492)}
+INFO:root:makespan: 2492

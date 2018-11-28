@@ -7,11 +7,11 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 
 ### Configs
-task_graph = 'robot' # 'sparse' or 'fpppp' or 'robot' or uncomment a line from below
+task_graph = 'fpppp' # 'sparse' or 'fpppp' or 'robot' or uncomment a line from below
 # from stg.fft import dag, commcost, compcost
 # from stg.laplace import dag, commcost, compcost
 # from stg.gaussian_elimination import dag, commcost, compcost
-log_to_file = False
+log_to_file = True
 log_level = logging.INFO
 ###
 
@@ -199,11 +199,6 @@ if __name__ == "__main__":
             tasks[0].successors = [1]
             tasks[1].predecessors = [0]
 
-    logging.info('-'*7 + ' Tasks ' + '-'*7 )
-    for task in tasks:
-        logging.info(task)
-    logging.info('-'*20)
-
     # Calculate ranku by traversing task graph upward
     for task in reversed(tasks):
         task.ranku = round(ranku(task.id, tasks), 3)
@@ -266,6 +261,6 @@ if __name__ == "__main__":
 
 
     for p in processors:
-        logging.info('tasks on processor %s: %s', p.id, [{t.id: (t.ast, t.aft)} for t in p.tasks])
+        logging.info('tasks on processor %s: %s', p.id, {t.id: (t.ast, t.aft) for t in p.tasks})
 
     logging.info('makespan: %s', makespan(tasks))
