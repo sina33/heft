@@ -1,19 +1,5 @@
-"""
-This is a simple script to use the HEFT function provided based on the example given in the original HEFT paper.
-You have to define the DAG, compcost function and commcost funtion.
-
-Each task/job is numbered 1 to 10
-Each processor/agent is named 'a', 'b' and 'c'
-
-Output expected:
-Ranking:
-[10, 8, 7, 9, 6, 5, 2, 4, 3, 1]
-Schedule:
-('a', [Event(job=2, start=27, end=40), Event(job=8, start=57, end=62)])
-('b', [Event(job=4, start=18, end=26), Event(job=6, start=26, end=42), Event(job=9, start=56, end=68), Event(job=10, start=73, end=80)])
-('c', [Event(job=1, start=0, end=9), Event(job=3, start=9, end=28), Event(job=5, start=28, end=38), Event(job=7, start=38, end=49)])
-{1: 'c', 2: 'a', 3: 'c', 4: 'b', 5: 'c', 6: 'b', 7: 'c', 8: 'a', 9: 'b', 10: 'b'}
-"""
+total_cores = 4
+low_perf_multiplier = 2
 
 
 dag={1:(2,3,4,5),
@@ -34,41 +20,83 @@ dag={1:(2,3,4,5),
 
 def compcost(job, agent):
     if(job==0):
-        return 0
+        return 0 
     if(job==1):
+        if agent == 'a' or agent == 'b':
+            return 1 * low_perf_multiplier
+        else:
             return 1
     if(job==2):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==3):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==4):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==5):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==6):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==7):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==8):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==9):
+        if agent == 'a' or agent == 'b':
+            return 5 * low_perf_multiplier
+        else:
             return 5
     if(job==10):
+        if agent == 'a' or agent == 'b':
+            return 14 * low_perf_multiplier
+        else:
             return 14
     if(job==11):
+        if agent == 'a' or agent == 'b':
+            return 14 * low_perf_multiplier
+        else:
             return 14
     if(job==12):
+        if agent == 'a' or agent == 'b':
+            return 14 * low_perf_multiplier
+        else:
             return 14
     if(job==13):
+        if agent == 'a' or agent == 'b':
+            return 14 * low_perf_multiplier
+        else:
             return 14
     if(job==14):
+        if agent == 'a' or agent == 'b':
+            return 1 * low_perf_multiplier
+        else:
             return 1
 
 
 
 
 def commcost(ni, nj, A, B):
-
+    return 0
     if(A==B):
         return 0
     else:
