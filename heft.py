@@ -12,8 +12,8 @@ task_graph = 'gaussian' # 'sparse' or 'fpppp' or 'robot' or uncomment a line fro
 # from stg.fft import dag, commcost, compcost
 # from stg.laplace import dag, commcost, compcost
 from stg.gaussian_elimination import dag, commcost, compcost
-log_to_file = True
-log_level = logging.INFO
+log_to_file = False
+log_level = logging.DEBUG
 ###
 
 
@@ -32,7 +32,7 @@ global commcost
 global dag
 stgs = ['sparse', 'robot', 'fpppp']
 
-### for running stg task graphs
+# for running stg task graphs
 if task_graph in stgs:
     low_perf_multiplier = 2
     dag, _compcost = stg_to_dag('stg/' + task_graph)
@@ -48,7 +48,6 @@ if task_graph in stgs:
 
     compcost = comp
     commcost = comm
-
 else:
     pass
 
@@ -151,6 +150,7 @@ def eft(i, p, tasks, processors):
 
 def makespan(tasks):
     seq = [t.aft for t in tasks]
+    logging.debug('aft: %s', seq)
     return max(seq)
 
 

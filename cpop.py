@@ -1,28 +1,55 @@
 from stg.laplace import dag, commcost, compcost
-# from util import stg_to_dag
+from util import stg_to_dag
 import statistics as stats
 from queue import PriorityQueue
 import logging
 logging.getLogger(__name__).addHandler(logging.NullHandler())
-logging.basicConfig(level=logging.INFO)
 
+
+### Configs
+task_graph = 'robot' # 'sparse' or 'fpppp' or 'robot' or uncomment a line from below
+# from stg.fft import dag, commcost, compcost
+# from stg.laplace import dag, commcost, compcost
+# from stg.gaussian_elimination import dag, commcost, compcost
+log_to_file = False
+log_level = logging.INFO
+###
+
+
+if log_to_file:
+    log_filename = 'logs/cpop/' + task_graph + '.log'
+    logging.basicConfig(level=log_level, filename=log_filename) # filename='sparse.log'
+else:
+    logging.basicConfig(level=log_level)
 
 # Set the computation costs of tasks and communication costs of edges with mean values.
 # Compute rank_u for all tasks by traversing graph upward, starting from the exit task.
 # Sort the tasks in a scheduling list by nonincreasing order of rank_u values.
 
-# total_cores = 4
-# low_perf_multiplier = 2
-# dag, _compcost = stg_to_dag('stg/sparse')
+global compcost
+global commcost
+global dag
+stgs = ['sparse', 'robot', 'fpppp']
 
-# def commcost(a, b, A, B):
-#     return 0
+# for running stg task graphs
+if task_graph in stgs:
+    low_perf_multiplier = 2
+    dag, _compcost = stg_to_dag('stg/' + task_graph)
 
-# def compcost(job, agent):
-#     if agent == 'a' or agent == 'b':
-#         return _compcost[job] * low_perf_multiplier
-#     else: 
-#         return _compcost[job]
+    def comm(a, b, A, B):
+        return 0
+
+    def comp(job, agent):
+        if agent == 'a' or agent == 'b':
+            return _compcost[job] * low_perf_multiplier
+        else: 
+            return _compcost[job]
+
+    compcost = comp
+    commcost = comm
+else:
+    pass
+
 
 
 class Task:
@@ -108,10 +135,10 @@ def est(i, p, tasks, processors):
     if i==0:        # entry task
         return 0
     seq = [tasks[m].aft + commcost(m, i, tasks[m].processor, p) + commcost(i, m, tasks[m].processor, p) for m in tasks[i].predecessors]
-    logging.debug('est() ready_times for task %s on processor %s : %s', i, p, seq)
+    # logging.debug('est() ready_times for task %s on processor %s : %s', i, p, seq)
     ready_time = max(seq)
     res = max([ready_time, processors[p].avail])
-    logging.debug('est(%s, %s): %s', i, p, res)
+    # logging.debug('est(%s, %s): %s', i, p, res)
     return res
 
 def eft(i, p, tasks, processors):
@@ -124,12 +151,13 @@ def eft(i, p, tasks, processors):
         processors {list} -- list of Processors
     """
     res = compcost(i, chr(97+p)) + est(i, p, tasks, processors)
-    logging.debug('eft(%s, %s) = %s', i, p, res)
+    # logging.debug('eft(%s, %s) = %s', i, p, res)
     return res
 
 
 def makespan(tasks):
     seq = [t.aft for t in tasks]
+    # logging.debug(seq)
     return max(seq)
 
 
@@ -156,7 +184,7 @@ if __name__ == "__main__":
     P = 4
     processors = [Processor(i) for i in range(P)]
     # Create Tasks
-    N = len(dag)+1
+    N = len(dag) if task_graph in stgs else len(dag) + 1
     tasks = [Task(i) for i in range(N)]
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
@@ -167,8 +195,14 @@ if __name__ == "__main__":
             tasks[x].predecessors.append(t)
         # setup entry task (id=0)
         tasks[0].avg_comp_cost = 0
-        tasks[0].successors = [1]
-        tasks[1].predecessors = [0]
+        if task_graph not in stgs:
+            tasks[0].successors = [1]
+            tasks[1].predecessors = [0]
+
+    logging.info('-'*7 + ' Tasks ' + '-'*7 )
+    for task in tasks:
+        logging.info(task)
+    logging.info('-'*20)
 
     # Calculate ranku by traversing task graph upward
     for task in reversed(tasks):
