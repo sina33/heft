@@ -28,7 +28,7 @@ def stg_to_dag(filename = 'sparse'):
         line = f.readline() # no_tasks
         no_tasks = int(line)
     dag = dict()
-    _compcost = np.zeros(no_tasks+1, dtype=int)
+    _compcost = np.zeros(no_tasks+2, dtype=int)
     _commcost = np.zeros((no_tasks, no_tasks), dtype=int)
 
 
@@ -37,7 +37,7 @@ def stg_to_dag(filename = 'sparse'):
         cnt = 0
         line = f.readline()
         # while line:
-        while cnt < no_tasks:
+        while cnt < no_tasks + 2:
             task, exec_time, deps_size, *deps = map(int, line.split())
             _compcost[task] = exec_time
             dag[task] = dag.get(task, ())

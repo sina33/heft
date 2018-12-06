@@ -8,12 +8,13 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 ### Configs
 alg = 'heft-t' # 'heft-t' (ranku) or 'heft-b' (rankd)
-task_graph = 'gaussian' # 'sparse' or 'fpppp' or 'robot' or uncomment a line from below
+task_graph = 'rand0002-100.stg' # 'sparse' or 'fpppp' or 'robot' or uncomment a line from below
+stg_flag = True
 # from stg.fft import dag, commcost, compcost
 # from stg.laplace import dag, commcost, compcost
-from stg.gaussian_elimination import dag, commcost, compcost
+# from stg.gaussian_elimination import dag, commcost, compcost
 log_to_file = False
-log_level = logging.DEBUG
+log_level = logging.INFO
 ###
 
 
@@ -31,9 +32,12 @@ global compcost
 global commcost
 global dag
 stgs = ['sparse', 'robot', 'fpppp']
+rankuDict = {}
+rankdDict = {}
+stgs.append(task_graph)
 
 # for running stg task graphs
-if task_graph in stgs:
+if stg_flag:
     low_perf_multiplier = 2
     dag, _compcost = stg_to_dag('stg/' + task_graph)
 
@@ -90,12 +94,19 @@ def ranku(i, tasks):
         i {int} -- task id
         tasks {list} -- list of Tasks
     """ 
+    global rankuDict
+    if i in rankuDict:
+        return rankuDict[i]
+
     seq = [commcost(i, j,'a', 'b') + ranku(j, tasks) for j in tasks[i].successors]
-    logging.debug('%s - seq: %s', i, seq)
-    if i==0:
+    logging.debug('ranku[%s] - seq: %s', i, seq)
+    if i==0:    # Entry Task
+        rankuDict[0] = 9999
         return 9999
     if seq == []:
+        rankuDict[i] = tasks[i].avg_comp_cost 
         return tasks[i].avg_comp_cost
+    rankuDict[i] = tasks[i].avg_comp_cost + max(seq)
     return tasks[i].avg_comp_cost + max(seq)
 
 
@@ -106,10 +117,15 @@ def rankd(i, tasks):
         i {int} -- task id
         tasks {list} -- list of Tasks
     """
+    global rankdDict
+    if i in rankdDict:
+        return rankdDict[i]
     if i==0:        # entry task
+        rankdDict[0] = 0
         return 0
     logging.debug('rankd(%s)', i)
     seq = [(rankd(j, tasks) + tasks[j].avg_comp_cost + commcost(j, i, 'a', 'b')) for j in tasks[i].predecessors]
+    rankdDict[i] = max(seq)
     return max(seq)
 
 
@@ -183,7 +199,7 @@ if __name__ == "__main__":
     P = 4
     processors = [Processor(i) for i in range(P)]
     # Create Tasks
-    N = len(dag) - 1 if task_graph in stgs else len(dag)
+    N = len(dag) - 1 if stg_flag else len(dag) - 1
     tasks = [Task(i) for i in range(N+1)] # N+1 for non-stg
     for t, succ in dag.items():
         tasks[t].successors = [x for x in succ]
@@ -194,9 +210,9 @@ if __name__ == "__main__":
             tasks[x].predecessors.append(t)
         # setup entry task (id=0)
         tasks[0].avg_comp_cost = 0
-        if task_graph not in stgs:
-            tasks[0].successors = [1]
-            tasks[1].predecessors = [0]
+        # if task_graph not in stgs:
+        #     tasks[0].successors = [1]
+        #     tasks[1].predecessors = [0]
         
 
     logging.info('-'*7 + ' Tasks ' + '-'*7 )
